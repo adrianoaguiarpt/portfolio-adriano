@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <canvas id="interactive-bg"></canvas>
     <!-- Background Animated Blobs -->
     <div class="bg-shape shape-1"></div>
     <div class="bg-shape shape-2"></div>
@@ -23,6 +24,13 @@
     <header>
         <nav>
             <div class="logo">Adriano Dev</div>
+            <button class="menu-hamburger" aria-label="Abrir menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
             <ul>
                 <li><a href="#inicio">Início</a></li>
                 <li><a href="#sobre">Sobre Mim</a></li>
@@ -42,7 +50,7 @@
             <div class="banner-content">
                 <div class="banner-text">
                     <h1>Adriano Aguiar</h1>
-                    <p class="banner-subtitle">Desenvolvedor Full Stack <span class="cursor">|</span></p>
+                    <p class="banner-subtitle">Desenvolvedor Full Stack</p>
                     <div class="banner-divider"></div>
                     <p class="banner-description">Aprendizado contínuo | Honestidade técnica | Evolução constante</p>
                     <div class="banner-cta">
@@ -64,13 +72,13 @@
             <h2>Sobre Mim</h2>
             <div class="sobre-container">
                 <div class="sobre-texto">
-                    <p>👋 <strong>Quem sou eu</strong></p>
+                    <p> <strong>Quem sou eu</strong></p>
                     <p>Sou um desenvolvedor em formação que não tem medo de dizer: <strong>"Ainda não sei, mas vou aprender"</strong>. Minha maior qualidade é a curiosidade e o comprometimento - quando me proponho a algo, vou até o fim com maestria.</p>
                     
                     <p>📚 <strong>Minha jornada de estudos</strong></p>
                     <p>Atualmente estou cursando o <strong>Formação Full Stack Developer da Udemy</strong>, um bootcamp completo que cobre desde o front-end até o back-end. Meu objetivo é dominar todo o ciclo de desenvolvimento de um site, do início ao fim.</p>
                     
-                    <p>✅ <strong>O que JÁ sei (fundamentos sólidos)</strong></p>
+                    <p> <strong>O que JÁ sei (fundamentos sólidos)</strong></p>
                     <div class="skill-badge-container">
                         <span class="skill-badge">HTML5</span>
                         <span class="skill-badge">CSS3</span>
@@ -78,7 +86,7 @@
                         <span class="skill-badge">Git</span>
                     </div>
                     
-                    <p>🔄 <strong>O que estou APRENDENDO agora</strong></p>
+                    <p> <strong>O que estou APRENDENDO agora</strong></p>
                     <div class="skill-badge-container learning">
                         <span class="skill-badge learning">FlexBox</span>
                         <span class="skill-badge learning">Grid</span>
@@ -89,35 +97,35 @@
                     <p>🎯 <strong>Meu roadmap de estudos (2025-2026)</strong></p>
                     <div class="roadmap">
                         <div class="roadmap-phase">
-                            <h4>Fase 1 - Base sólida ✅</h4>
+                            <h4>Fase 1 - Base sólida - concluída</h4>
                             <p>HTML, CSS, JavaScript, Git</p>
                         </div>
                         <div class="roadmap-phase">
-                            <h4>Fase 2 - Front-end Moderno ⏳</h4>
+                            <h4>Fase 2 - Front-end Moderno em andamento</h4>
                             <p>React, Tailwind, FlexBox, Grid</p>
                         </div>
                         <div class="roadmap-phase">
-                            <h4>Fase 3 - Back-end 🔜</h4>
+                            <h4>Fase 3 - Back-end em andamento</h4>
                             <p>Node.js, TypeScript, API, Prisma</p>
                         </div>
                         <div class="roadmap-phase">
-                            <h4>Fase 4 - Banco de Dados 🔜</h4>
+                            <h4>Fase 4 - Banco de Dados em andamento</h4>
                             <p>MySQL, MongoDB</p>
                         </div>
                         <div class="roadmap-phase">
-                            <h4>Fase 5 - DevOps 🔜</h4>
+                            <h4>Fase 5 - DevOps em andamento</h4>
                             <p>Docker, Next.js</p>
                         </div>
                     </div>
                     
-                    <p>💡 <strong>Minha filosofia</strong></p>
+                    <p> <strong>Minha filosofia</strong></p>
                     <p>Este portfólio é <strong>vivo</strong>. Ele vai evoluir junto comigo. Conforme eu for aprendendo novas tecnologias e construindo projetos, vou atualizando cada seção. Prefiro mostrar a verdade do que fingir que sei tudo. Recrutadores podem confiar: o que está aqui é real, e o que não está, estou correndo atrás.</p>
                     
-                    <p>🎯 <strong>Meu objetivo profissional</strong></p>
+                    <p> <strong>Meu objetivo profissional</strong></p>
                     <p>Conquistar minha primeira oportunidade como desenvolvedor júnior, onde possa continuar aprendendo na prática, contribuindo com dedicação e crescendo junto com a empresa.</p>
                     
                     <div class="sobre-mensagem">
-                        <p>✨ <em>"Não sei tudo, mas sei onde encontrar as respostas. E quando aprendo, compartilho através dos meus projetos."</em></p>
+                        <p> <em>"Não sei tudo, mas sei onde encontrar as respostas. E quando aprendo, compartilho através dos meus projetos."</em></p>
                     </div>
                 </div>
             </div>
@@ -128,7 +136,7 @@
             <h2>Habilidades</h2>
             <div class="habilidades-container">
                 <div class="skill-card">
-                    <h3>🚀 Já Domino</h3>
+                    <h3> Já Domino</h3>
                     <p>HTML, CSS, JavaScript, Git</p>
                     <div class="progress-bar-skill">
                         <div class="progress" style="width: 85%"></div>
@@ -136,7 +144,7 @@
                     <span class="skill-level">Intermediário/Avançado</span>
                 </div>
                 <div class="skill-card">
-                    <h3>📚 Estudando Agora</h3>
+                    <h3> Estudando Agora</h3>
                     <p>FlexBox, Grid, Node.js, TypeScript</p>
                     <div class="progress-bar-skill">
                         <div class="progress" style="width: 40%"></div>
@@ -144,7 +152,7 @@
                     <span class="skill-level">Em progresso</span>
                 </div>
                 <div class="skill-card">
-                    <h3>🎯 Próximos Passos</h3>
+                    <h3> Próximos Passos</h3>
                     <p>React, Tailwind, Next, API, Prisma</p>
                     <div class="progress-bar-skill">
                         <div class="progress" style="width: 15%"></div>
@@ -152,7 +160,7 @@
                     <span class="skill-level">Planejado</span>
                 </div>
                 <div class="skill-card">
-                    <h3>📦 Futuro</h3>
+                    <h3> Futuro</h3>
                     <p>MySQL, MongoDB, Docker</p>
                     <div class="progress-bar-skill">
                         <div class="progress" style="width: 5%"></div>
@@ -167,13 +175,13 @@
             <h2>Experiências</h2>
             <div class="experiencias-container">
                 <div class="experiencia-card">
-                    <h3>📖 Formação Full Stack Developer</h3>
+                    <h3> Formação Full Stack Developer</h3>
                     <p class="empresa">Udemy - Bootcamp Completo</p>
                     <p class="periodo">2025 - Presente</p>
                     <p>Aprendendo: HTML, CSS, FlexBox, Grid, JavaScript, Node, TypeScript, React, Tailwind, Next, MySQL, MongoDB, Docker, Git, API e Prisma.</p>
                 </div>
                 <div class="experiencia-card">
-                    <h3>💼 Portfólio em Evolução</h3>
+                    <h3>Portfólio em Evolução</h3>
                     <p class="empresa">Projeto Pessoal</p>
                     <p class="periodo">2025 - Presente</p>
                     <p>Construindo meus primeiros projetos e documentando minha jornada de aprendizado. Cada novo conhecimento vira um projeto real neste portfólio.</p>
@@ -187,28 +195,28 @@
             <p class="section-subtitle">Projetos reais que estou construindo enquanto aprendo</p>
             <div class="projects-grid">
                 <article class="project-card">
-                    <h3>📝 Portfólio Pessoal</h3>
+                    <h3> Portfólio Pessoal</h3>
                     <p>Tecnologias: HTML, CSS, JavaScript</p>
                     <p class="project-description">Este portfólio que você está vendo! Construído do zero e será atualizado a cada nova tecnologia aprendida.</p>
-                    <div class="project-status">✅ Concluído - Versão 1.0</div>
+                    <div class="project-status"> Concluído - Versão 1.0</div>
                     <div class="project-links">
                         <a href="#" class="project-link">Ver projeto →</a>
                     </div>
                 </article>
                 <article class="project-card">
-                    <h3>🔄 Em Breve...</h3>
+                    <h3> Em Breve...</h3>
                     <p>Próximo projeto: A ser definido</p>
                     <p class="project-description">Assim que eu dominar a próxima tecnologia (React ou Node.js), construirei um projeto completo e postarei aqui.</p>
-                    <div class="project-status">⏳ Em planejamento</div>
+                    <div class="project-status"> Em planejamento</div>
                     <div class="project-links">
                         <a href="#" class="project-link disabled">Em breve</a>
                     </div>
                 </article>
                 <article class="project-card">
-                    <h3>🎯 Roadmap Interativo</h3>
+                    <h3> Roadmap Interativo</h3>
                     <p>Tecnologias: JavaScript + API</p>
                     <p class="project-description">Projeto que estou planejando para praticar API e JavaScript avançado. Será um tracker de estudos pessoal.</p>
-                    <div class="project-status">📐 Em design</div>
+                    <div class="project-status"> Em design</div>
                     <div class="project-links">
                         <a href="#" class="project-link disabled">Em breve</a>
                     </div>
@@ -221,7 +229,7 @@
             <h2>Certificações em Andamento</h2>
             <div class="certificacoes-container">
                 <div class="certificacao-card">
-                    <h3>🎓 Formação Full Stack Developer</h3>
+                    <h3>Formação Full Stack Developer</h3>
                     <p>Udemy - Cursando</p>
                     <div class="cert-progress">
                         <div class="cert-progress-bar" style="width: 30%"></div>
@@ -229,12 +237,12 @@
                     </div>
                 </div>
                 <div class="certificacao-card">
-                    <h3>📜 Certificados que busco</h3>
+                    <h3> Certificados que busco</h3>
                     <p>React · Node.js · Docker · TypeScript</p>
                     <p class="small">Assim que concluir cada módulo, adicionarei os certificados aqui</p>
                 </div>
                 <div class="certificacao-card">
-                    <h3>🎯 Meta 2026</h3>
+                    <h3> Meta 2026</h3>
                     <p>Concluir o bootcamp completo e iniciar especialização em Back-End</p>
                 </div>
             </div>
@@ -246,7 +254,7 @@
         <div class="footer-content">
             <div class="footer-info">
                 <p>&copy; 2025-2026 - Adriano Aguiar</p>
-                <p>Portfólio em evolução constante 🚀</p>
+                <p>Portfólio em evolução constante </p>
             </div>
             <div class="footer-contato">
                 <h4>Contato</h4>

@@ -1,180 +1,185 @@
-// ===== SCRIPT.JS - PORTFÓLIO PREMIUM =====
-
 document.addEventListener('DOMContentLoaded', () => {
     
-    // ===== 1. MENU MOBILE (Modernizado) =====
-    const nav = document.querySelector('nav');
-    const ul = document.querySelector('nav ul');
-    
-    // Create hamburger button if it doesn't exist
-    if (!document.querySelector('.menu-hamburger')) {
-        const hamburger = document.createElement('div');
-        hamburger.className = 'menu-hamburger';
-        hamburger.innerHTML = `
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="3" y1="12" x2="21" y2="12"></line>
-                <line x1="3" y1="6" x2="21" y2="6"></line>
-                <line x1="3" y1="18" x2="21" y2="18"></line>
-            </svg>
-        `;
-        hamburger.style.cssText = `
-            cursor: pointer;
-            color: var(--primary-blue);
-            display: none;
-            z-index: 1001;
-        `;
-        
-        nav.insertBefore(hamburger, nav.firstChild);
-        
-        // Media query check for display
-        const checkMobile = () => {
-            if (window.innerWidth <= 768) {
-                hamburger.style.display = 'block';
-                ul.style.display = 'none';
-            } else {
-                hamburger.style.display = 'none';
-                ul.style.display = 'flex';
-            }
-        };
-        
-        window.addEventListener('resize', checkMobile);
-        checkMobile();
-        
-        hamburger.addEventListener('click', () => {
-            const isVisible = ul.style.display === 'flex';
-            if (isVisible) {
-                ul.style.display = 'none';
-                hamburger.innerHTML = `
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="3" y1="12" x2="21" y2="12"></line>
-                        <line x1="3" y1="6" x2="21" y2="6"></line>
-                        <line x1="3" y1="18" x2="21" y2="18"></line>
-                    </svg>
-                `;
-            } else {
-                ul.style.display = 'flex';
-                hamburger.innerHTML = `
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
-                `;
-            }
-        });
-        
-        ul.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (window.innerWidth <= 768) {
-                    ul.style.display = 'none';
-                    hamburger.innerHTML = `
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="3" y1="12" x2="21" y2="12"></line>
-                            <line x1="3" y1="6" x2="21" y2="6"></line>
-                            <line x1="3" y1="18" x2="21" y2="18"></line>
-                        </svg>
-                    `;
-                }
-            });
-        });
-    }
-    
-    // ===== 2. LINK ATIVO NO SCROLL =====
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('nav ul li a');
-    const headerHeight = document.querySelector('header').offsetHeight;
-    
-    window.addEventListener('scroll', () => {
-        let current = '';
-        const scrollPosition = window.scrollY + headerHeight + 100;
-        
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionBottom = sectionTop + section.offsetHeight;
-            
-            if (scrollPosition >= sectionTop && scrollPosition <= sectionBottom) {
-                current = section.getAttribute('id');
-            }
-        });
-        
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            const href = link.getAttribute('href').substring(1);
-            if (href === current) {
-                link.classList.add('active');
-            }
-        });
+    // 1. MENU MOBILE
+    const btnMenu = document.querySelector('.menu-hamburger');
+    const menuUl = document.querySelector('nav ul');
+
+    btnMenu.addEventListener('click', () => {
+        menuUl.classList.toggle('open');
     });
-    
-    // ===== 3. ANIMAÇÃO DE ENTRADA (Intersection Observer Premium) =====
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px"
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
+
+    // 2. INTERSECTION OBSERVER (O "Maestro" do site)
+    // Pega as cores do CSS para usar no Canvas se precisar
+    const rootStyles = getComputedStyle(document.documentElement);
+    const primaryColor = rootStyles.getPropertyValue('--clr-primary').trim();
+
+    const observerOptions = { threshold: 0.15 };
+
+    const globalObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-                observer.unobserve(entry.target);
+                // Ativa a animação de revelação
+                entry.target.classList.add('active');
+
+                // Se houver uma barra de progresso dentro, ela anima
+                const bar = entry.target.querySelector('.progress');
+                if (bar) {
+                    bar.style.width = bar.getAttribute('data-width');
+                }
+                
+                // Para de observar depois que animou (performance!)
+                globalObserver.unobserve(entry.target);
             }
         });
     }, observerOptions);
-    
-    document.querySelectorAll('.skill-card, .project-card, .experiencia-card, .certificacao-card, .roadmap-phase, .sobre-container').forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(40px)';
-        el.style.transition = 'all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1)';
-        observer.observe(el);
-    });
-    
-    // ===== 4. ANIMAÇÃO DAS BARRAS DE PROGRESSO =====
-    const progressObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const bar = entry.target;
-                // Get original width from parent inline style or custom data attribute
-                // Since inline style is on the element itself, we can use it
-                const targetWidth = bar.style.width;
-                bar.style.width = '0%';
-                
-                setTimeout(() => {
-                    bar.style.width = targetWidth;
-                }, 200);
-                
-                progressObserver.unobserve(bar);
+
+    // Seleciona todos os itens que devem "aparecer" ao scroll
+    document.querySelectorAll('.reveal-item').forEach(el => globalObserver.observe(el));
+
+    // 3. CANVAS (Fundo interativo estilo Antigravity)
+    const canvas = document.getElementById('interactive-bg');
+    const ctx = canvas.getContext('2d');
+    const particleColors = [
+        { r: 66, g: 165, b: 245 },
+        { r: 156, g: 39, b: 176 },
+        { r: 255, g: 152, b: 0 },
+        { r: 76, g: 175, b: 80 },
+        { r: 0, g: 188, b: 212 },
+        { r: 244, g: 67, b: 54 }
+    ];
+    let particles = [];
+    let mouse = { x: null, y: null, radius: 200 };
+
+    function resize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        createParticles();
+    }
+
+    window.addEventListener('resize', resize);
+    resize();
+
+    class Particle {
+        constructor() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.radius = Math.random() * 40 + 20;
+            this.vx = (Math.random() - 0.5) * 0.4;
+            this.vy = (Math.random() - 0.5) * 0.4;
+            this.color = particleColors[Math.floor(Math.random() * particleColors.length)];
+            this.targetVx = this.vx;
+            this.targetVy = this.vy;
+        }
+
+        update() {
+            // Suaviza o movimento (easing)
+            this.vx += (this.targetVx - this.vx) * 0.05;
+            this.vy += (this.targetVy - this.vy) * 0.05;
+
+            this.x += this.vx;
+            this.y += this.vy;
+
+            if (this.x < -this.radius) this.x = canvas.width + this.radius;
+            if (this.x > canvas.width + this.radius) this.x = -this.radius;
+            if (this.y < -this.radius) this.y = canvas.height + this.radius;
+            if (this.y > canvas.height + this.radius) this.y = -this.radius;
+
+            if (mouse.x !== null && mouse.y !== null) {
+                const dx = this.x - mouse.x;
+                const dy = this.y - mouse.y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < mouse.radius && dist > 0) {
+                    const force = (mouse.radius - dist) / mouse.radius;
+                    const angle = Math.atan2(dy, dx);
+                    this.targetVx = Math.cos(angle) * force * 3;
+                    this.targetVy = Math.sin(angle) * force * 3;
+                }
             }
+
+            // Reduz a velocidade gradualmente quando longe do mouse
+            if (mouse.x === null) {
+                this.targetVx = (Math.random() - 0.5) * 0.4;
+                this.targetVy = (Math.random() - 0.5) * 0.4;
+            }
+        }
+
+        draw() {
+            const gradient = ctx.createRadialGradient(
+                this.x, this.y, 0,
+                this.x, this.y, this.radius
+            );
+            const c = this.color;
+            gradient.addColorStop(0, `rgba(${c.r}, ${c.g}, ${c.b}, 0.5)`);
+            gradient.addColorStop(0.5, `rgba(${c.r}, ${c.g}, ${c.b}, 0.25)`);
+            gradient.addColorStop(1, `rgba(${c.r}, ${c.g}, ${c.b}, 0)`);
+
+            ctx.save();
+            ctx.globalCompositeOperation = 'lighter';
+            ctx.filter = 'blur(35px)';
+            ctx.fillStyle = gradient;
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.restore();
+        }
+    }
+
+    function createParticles() {
+        particles = [];
+        const count = Math.max(25, Math.round(canvas.width / 35));
+        for (let i = 0; i < count; i++) {
+            particles.push(new Particle());
+        }
+    }
+
+    function connectParticles() {
+        const connectionDist = 150;
+        for (let i = 0; i < particles.length; i++) {
+            for (let j = i + 1; j < particles.length; j++) {
+                const a = particles[i];
+                const b = particles[j];
+                const dx = a.x - b.x;
+                const dy = a.y - b.y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                
+                if (dist < connectionDist) {
+                    const alpha = (1 - dist / connectionDist) * 0.25;
+                    ctx.save();
+                    ctx.strokeStyle = `rgba(200, 200, 200, ${alpha})`;
+                    ctx.lineWidth = 1.2;
+                    ctx.beginPath();
+                    ctx.moveTo(a.x, a.y);
+                    ctx.lineTo(b.x, b.y);
+                    ctx.stroke();
+                    ctx.restore();
+                }
+            }
+        }
+    }
+
+    function animate() {
+        ctx.fillStyle = 'rgba(10, 15, 35, 0.05)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        particles.forEach(p => {
+            p.update();
+            p.draw();
         });
-    }, { threshold: 0.5 });
-    
-    document.querySelectorAll('.progress, .cert-progress-bar').forEach(bar => {
-        progressObserver.observe(bar);
+        connectParticles();
+        requestAnimationFrame(animate);
+    }
+
+    window.addEventListener('mousemove', (event) => {
+        mouse.x = event.clientX;
+        mouse.y = event.clientY;
     });
-    
-    // ===== 5. BARRA DE PROGRESSO DE LEITURA =====
-    const progressBar = document.createElement('div');
-    progressBar.style.cssText = `
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 0%;
-        height: 3px;
-        background: linear-gradient(90deg, var(--primary-blue), var(--primary-purple));
-        z-index: 9999;
-        transition: width 0.1s;
-    `;
-    document.body.appendChild(progressBar);
-    
-    window.addEventListener('scroll', () => {
-        const windowHeight = window.innerHeight;
-        const documentHeight = document.documentElement.scrollHeight;
-        const scrollTop = window.scrollY;
-        const progress = (scrollTop / (documentHeight - windowHeight)) * 100;
-        progressBar.style.width = progress + '%';
+
+    window.addEventListener('mouseout', () => {
+        mouse.x = null;
+        mouse.y = null;
     });
-    
-    // ===== 6. CONSOLE WELCOME =====
-    console.log('%c🚀 Portfólio de Adriano Aguiar', 'color: #00f0ff; font-size: 18px; font-weight: bold;');
-    console.log('%cConstruído com tecnologias nativas (HTML/CSS/JS) e focado em performance e estética premium.', 'color: #a1a1aa; font-size: 14px;');
-    console.log('%c💻 Aberto a oportunidades como Desenvolvedor Full Stack Júnior.', 'color: #00e676; font-size: 14px;');
+
+    animate();
+
+    console.log('%c Cláudia: "Código limpo é código feliz! Bons estudos, Adriano!" ', 'background: #3279f9; color: #fff; padding: 5px;');
 });
