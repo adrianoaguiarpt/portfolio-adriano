@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfólio de Adriano Aguiar - Desenvolvedor Full Stack em evolução">
-    <title>Adriano Aguiar | Full Stack Developer - Em Evolução</title>
+    <title data-i18n="doc_title">Adriano Aguiar | Full Stack Developer - Em Evolução</title>
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    
+
     <!-- Google Fonts: Outfit -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <canvas id="interactive-bg"></canvas>
     <!-- Background Animated Blobs -->
@@ -24,21 +27,27 @@
     <header>
         <nav>
             <div class="logo">Adriano Dev</div>
+            <div class="lang-selector">
+                <button class="lang-btn active" data-lang="pt">PT</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="es">ES</button>
+            </div>
             <button class="menu-hamburger" aria-label="Abrir menu">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
                     <line x1="3" y1="12" x2="21" y2="12"></line>
                     <line x1="3" y1="6" x2="21" y2="6"></line>
                     <line x1="3" y1="18" x2="21" y2="18"></line>
                 </svg>
             </button>
             <ul>
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#sobre">Sobre Mim</a></li>
-                <li><a href="#habilidades">Habilidades</a></li>
-                <li><a href="#experiencias">Experiências</a></li>
-                <li><a href="#projetos">Projetos</a></li>
-                <li><a href="#certificacoes">Certificações</a></li>
-                <li><a href="#contato">Contato</a></li>
+                <li><a href="#inicio" data-i18n="nav_inicio">Início</a></li>
+                <li><a href="#sobre" data-i18n="nav_sobre">Sobre Mim</a></li>
+                <li><a href="#habilidades" data-i18n="nav_habilidades">Habilidades</a></li>
+                <li><a href="#experiencias" data-i18n="nav_experiencias">Experiências</a></li>
+                <li><a href="#projetos" data-i18n="nav_projetos">Projetos</a></li>
+                <li><a href="#certificacoes" data-i18n="nav_certificacoes">Certificações</a></li>
+                <li><a href="#contato" data-i18n="nav_contato">Contato</a></li>
             </ul>
         </nav>
     </header>
@@ -50,17 +59,20 @@
             <div class="banner-content">
                 <div class="banner-text">
                     <h1>Adriano Aguiar</h1>
-                    <p class="banner-subtitle">Desenvolvedor Full Stack</p>
+                    <p class="banner-subtitle" data-i18n="hero_subtitle">Desenvolvedor Full Stack</p>
                     <div class="banner-divider"></div>
-                    <p class="banner-description">Aprendizado contínuo | Honestidade técnica | Evolução constante</p>
+                    <p class="banner-description" data-i18n="hero_description">Aprendizado contínuo | Honestidade
+                        técnica | Evolução constante</p>
                     <div class="banner-cta">
-                        <a href="#projetos" class="cta-button">Explorar Projetos</a>
-                        <a href="curriculum/AdrianoaguiarCV.pdf" download class="cta-button secondary">Baixar Currículo</a>
+                        <a href="#projetos" class="cta-button" data-i18n="hero_cta_projects">Explorar Projetos</a>
+                        <a href="curriculum/AdrianoaguiarCV.pdf" download class="cta-button secondary" id="btn-cv"
+                            data-i18n="hero_cta_cv">Baixar Currículo</a>
                     </div>
                 </div>
                 <div class="banner-photo">
                     <div class="photo-wrapper">
-                        <img src="img/perfilloco.jpeg" alt="Foto de perfil de Adriano Aguiar">
+                        <img src="img/perfilloco.jpeg" data-i18n-alt="profile_pic_alt"
+                            alt="Foto de perfil de Adriano Aguiar">
                         <div class="photo-glow"></div>
                     </div>
                 </div>
@@ -69,63 +81,75 @@
 
         <!-- SEÇÃO SOBRE MIM - Versão honesta e transparente -->
         <section id="sobre">
-            <h2>Sobre Mim</h2>
+            <h2 data-i18n="about_title">Sobre Mim</h2>
             <div class="sobre-container">
                 <div class="sobre-texto">
-                    <p> <strong>Quem sou eu</strong></p>
-                    <p>Sou um desenvolvedor em formação que não tem medo de dizer: <strong>"Ainda não sei, mas vou aprender"</strong>. Minha maior qualidade é a curiosidade e o comprometimento - quando me proponho a algo, vou até o fim com maestria.</p>
-                    
-                    <p>📚 <strong>Minha jornada de estudos</strong></p>
-                    <p>Atualmente estou cursando o <strong>Formação Full Stack Developer da Udemy</strong>, um bootcamp completo que cobre desde o front-end até o back-end. Meu objetivo é dominar todo o ciclo de desenvolvimento de um site, do início ao fim.</p>
-                    
-                    <p> <strong>O que JÁ sei (fundamentos sólidos)</strong></p>
+                    <p data-i18n="about_who_i_am"> <strong>Quem sou eu</strong></p>
+                    <p data-i18n="about_description">Sou um desenvolvedor em formação que não tem medo de dizer:
+                        <strong>"Ainda não sei, mas vou aprender"</strong>. Minha maior qualidade é a curiosidade e o
+                        comprometimento - quando me proponho a algo, vou até o fim com maestria.
+                    </p>
+
+                    <p data-i18n="about_journey_title">📚 <strong>Minha jornada de estudos</strong></p>
+                    <p data-i18n="about_journey_description">Atualmente estou cursando o <strong>Formação Full Stack
+                            Developer da Udemy</strong>, um bootcamp completo que cobre desde o front-end até o
+                        back-end. Meu objetivo é dominar todo o ciclo de desenvolvimento de um site, do início ao fim.
+                    </p>
+
+                    <p data-i18n="about_skills_already_title"> <strong>O que JÁ sei (fundamentos sólidos)</strong></p>
                     <div class="skill-badge-container">
                         <span class="skill-badge">HTML5</span>
                         <span class="skill-badge">CSS3</span>
                         <span class="skill-badge">JavaScript</span>
                         <span class="skill-badge">Git</span>
                     </div>
-                    
-                    <p> <strong>O que estou APRENDENDO agora</strong></p>
+
+                    <p data-i18n="about_skills_learning_title"> <strong>O que estou APRENDENDO agora</strong></p>
                     <div class="skill-badge-container learning">
                         <span class="skill-badge learning">FlexBox</span>
                         <span class="skill-badge learning">Grid</span>
                         <span class="skill-badge learning">Node.js</span>
                         <span class="skill-badge learning">TypeScript</span>
                     </div>
-                    
-                    <p>🎯 <strong>Meu roadmap de estudos (2025-2026)</strong></p>
+
+                    <p data-i18n="about_roadmap_title">🎯 <strong>Meu roadmap de estudos (2025-2026)</strong></p>
                     <div class="roadmap">
                         <div class="roadmap-phase">
-                            <h4>Fase 1 - Base sólida - concluída</h4>
+                            <h4 data-i18n="about_phase1_title">Fase 1 - Base sólida - concluída</h4>
                             <p>HTML, CSS, JavaScript, Git</p>
                         </div>
                         <div class="roadmap-phase">
-                            <h4>Fase 2 - Front-end Moderno em andamento</h4>
+                            <h4 data-i18n="about_phase2_title">Fase 2 - Front-end Moderno em andamento</h4>
                             <p>React, Tailwind, FlexBox, Grid</p>
                         </div>
                         <div class="roadmap-phase">
-                            <h4>Fase 3 - Back-end em andamento</h4>
+                            <h4 data-i18n="about_phase3_title">Fase 3 - Back-end em andamento</h4>
                             <p>Node.js, TypeScript, API, Prisma</p>
                         </div>
                         <div class="roadmap-phase">
-                            <h4>Fase 4 - Banco de Dados em andamento</h4>
+                            <h4 data-i18n="about_phase4_title">Fase 4 - Banco de Dados em andamento</h4>
                             <p>MySQL, MongoDB</p>
                         </div>
                         <div class="roadmap-phase">
-                            <h4>Fase 5 - DevOps em andamento</h4>
+                            <h4 data-i18n="about_phase5_title">Fase 5 - DevOps em andamento</h4>
                             <p>Docker, Next.js</p>
                         </div>
                     </div>
-                    
-                    <p> <strong>Minha filosofia</strong></p>
-                    <p>Este portfólio é <strong>vivo</strong>. Ele vai evoluir junto comigo. Conforme eu for aprendendo novas tecnologias e construindo projetos, vou atualizando cada seção. Prefiro mostrar a verdade do que fingir que sei tudo. Recrutadores podem confiar: o que está aqui é real, e o que não está, estou correndo atrás.</p>
-                    
-                    <p> <strong>Meu objetivo profissional</strong></p>
-                    <p>Conquistar minha primeira oportunidade como desenvolvedor júnior, onde possa continuar aprendendo na prática, contribuindo com dedicação e crescendo junto com a empresa.</p>
-                    
+
+                    <p data-i18n="about_philosophy_title"> <strong>Minha filosofia</strong></p>
+                    <p data-i18n="about_philosophy_description">Este portfólio é <strong>vivo</strong>. Ele vai evoluir
+                        junto comigo. Conforme eu for aprendendo novas tecnologias e construindo projetos, vou
+                        atualizando cada seção. Prefiro mostrar a verdade do que fingir que sei tudo. Recrutadores podem
+                        confiar: o que está aqui é real, e o que não está, estou correndo atrás.</p>
+
+                    <p data-i18n="about_goal_title"> <strong>Meu objetivo profissional</strong></p>
+                    <p data-i18n="about_goal_description">Conquistar minha primeira oportunidade como desenvolvedor
+                        júnior, onde possa continuar aprendendo na prática, contribuindo com dedicação e crescendo junto
+                        com a empresa.</p>
+
                     <div class="sobre-mensagem">
-                        <p> <em>"Não sei tudo, mas sei onde encontrar as respostas. E quando aprendo, compartilho através dos meus projetos."</em></p>
+                        <p data-i18n="about_quote"> <em>"Não sei tudo, mas sei onde encontrar as respostas. E quando
+                                aprendo, compartilho através dos meus projetos."</em></p>
                     </div>
                 </div>
             </div>
@@ -133,92 +157,98 @@
 
         <!-- SEÇÃO HABILIDADES -->
         <section id="habilidades">
-            <h2>Habilidades</h2>
+            <h2 data-i18n="skills_title">Habilidades</h2>
             <div class="habilidades-container">
                 <div class="skill-card">
-                    <h3> Já Domino</h3>
+                    <h3 data-i18n="skills_domino_title"> Já Domino</h3>
                     <p>HTML, CSS, JavaScript, Git</p>
                     <div class="progress-bar-skill">
                         <div class="progress" style="width: 85%"></div>
                     </div>
-                    <span class="skill-level">Intermediário/Avançado</span>
+                    <span class="skill-level" data-i18n="skills_domino_level">Intermediário/Avançado</span>
                 </div>
                 <div class="skill-card">
-                    <h3> Estudando Agora</h3>
+                    <h3 data-i18n="skills_learning_title"> Estudando Agora</h3>
                     <p>FlexBox, Grid, Node.js, TypeScript</p>
                     <div class="progress-bar-skill">
                         <div class="progress" style="width: 40%"></div>
                     </div>
-                    <span class="skill-level">Em progresso</span>
+                    <span class="skill-level" data-i18n="skills_learning_level">Em progresso</span>
                 </div>
                 <div class="skill-card">
-                    <h3> Próximos Passos</h3>
+                    <h3 data-i18n="skills_next_title"> Próximos Passos</h3>
                     <p>React, Tailwind, Next, API, Prisma</p>
                     <div class="progress-bar-skill">
                         <div class="progress" style="width: 15%"></div>
                     </div>
-                    <span class="skill-level">Planejado</span>
+                    <span class="skill-level" data-i18n="skills_next_level">Planejado</span>
                 </div>
                 <div class="skill-card">
-                    <h3> Futuro</h3>
+                    <h3 data-i18n="skills_future_title"> Futuro</h3>
                     <p>MySQL, MongoDB, Docker</p>
                     <div class="progress-bar-skill">
                         <div class="progress" style="width: 5%"></div>
                     </div>
-                    <span class="skill-level">No roadmap</span>
+                    <span class="skill-level" data-i18n="skills_future_level">No roadmap</span>
                 </div>
             </div>
         </section>
 
         <!-- SEÇÃO EXPERIÊNCIAS -->
         <section id="experiencias">
-            <h2>Experiências</h2>
+            <h2 data-i18n="exp_title">Experiências</h2>
             <div class="experiencias-container">
                 <div class="experiencia-card">
-                    <h3> Formação Full Stack Developer</h3>
-                    <p class="empresa">Udemy - Bootcamp Completo</p>
-                    <p class="periodo">2025 - Presente</p>
-                    <p>Aprendendo: HTML, CSS, FlexBox, Grid, JavaScript, Node, TypeScript, React, Tailwind, Next, MySQL, MongoDB, Docker, Git, API e Prisma.</p>
+                    <h3 data-i18n="exp_bootcamp_title"> Formação Full Stack Developer</h3>
+                    <p class="empresa" data-i18n="exp_bootcamp_company">Udemy - Bootcamp Completo</p>
+                    <p class="periodo" data-i18n="exp_bootcamp_period">2025 - Presente</p>
+                    <p data-i18n="exp_bootcamp_desc">Aprendendo: HTML, CSS, FlexBox, Grid, JavaScript, Node, TypeScript,
+                        React, Tailwind, Next, MySQL, MongoDB, Docker, Git, API e Prisma.</p>
                 </div>
                 <div class="experiencia-card">
-                    <h3>Portfólio em Evolução</h3>
-                    <p class="empresa">Projeto Pessoal</p>
-                    <p class="periodo">2025 - Presente</p>
-                    <p>Construindo meus primeiros projetos e documentando minha jornada de aprendizado. Cada novo conhecimento vira um projeto real neste portfólio.</p>
+                    <h3 data-i18n="exp_portfolio_title">Portfólio em Evolução</h3>
+                    <p class="empresa" data-i18n="exp_portfolio_company">Projeto Pessoal</p>
+                    <p class="periodo" data-i18n="exp_portfolio_period">2025 - Presente</p>
+                    <p data-i18n="exp_portfolio_desc">Construindo meus primeiros projetos e documentando minha jornada
+                        de aprendizado. Cada novo conhecimento vira um projeto real neste portfólio.</p>
                 </div>
             </div>
         </section>
 
         <!-- SEÇÃO PROJETOS -->
         <section id="projetos">
-            <h2>Meus Projetos</h2>
-            <p class="section-subtitle">Projetos reais que estou construindo enquanto aprendo</p>
+            <h2 data-i18n="projects_title">Meus Projetos</h2>
+            <p class="section-subtitle" data-i18n="projects_subtitle">Projetos reais que estou construindo enquanto
+                aprendo</p>
             <div class="projects-grid">
                 <article class="project-card">
-                    <h3> Portfólio Pessoal</h3>
-                    <p>Tecnologias: HTML, CSS, JavaScript</p>
-                    <p class="project-description">Este portfólio que você está vendo! Construído do zero e será atualizado a cada nova tecnologia aprendida.</p>
-                    <div class="project-status"> Concluído - Versão 1.0</div>
+                    <h3 data-i18n="projects_portfolio_title"> Portfólio Pessoal</h3>
+                    <p data-i18n="projects_portfolio_techs">Tecnologias: HTML, CSS, JavaScript</p>
+                    <p class="project-description" data-i18n="projects_portfolio_desc">Este portfólio que você está
+                        vendo! Construído do zero e será atualizado a cada nova tecnologia aprendida.</p>
+                    <div class="project-status" data-i18n="projects_portfolio_status"> Concluído - Versão 1.0</div>
                     <div class="project-links">
-                        <a href="#" class="project-link">Ver projeto →</a>
+                        <a href="#" class="project-link" data-i18n="projects_portfolio_link">Ver projeto →</a>
                     </div>
                 </article>
                 <article class="project-card">
-                    <h3> Em Breve...</h3>
-                    <p>Próximo projeto: A ser definido</p>
-                    <p class="project-description">Assim que eu dominar a próxima tecnologia (React ou Node.js), construirei um projeto completo e postarei aqui.</p>
-                    <div class="project-status"> Em planejamento</div>
+                    <h3 data-i18n="projects_soon_title"> Em Breve...</h3>
+                    <p data-i18n="projects_soon_techs">Próximo projeto: A ser definido</p>
+                    <p class="project-description" data-i18n="projects_soon_desc">Assim que eu dominar a próxima
+                        tecnologia (React ou Node.js), construirei um projeto completo e postarei aqui.</p>
+                    <div class="project-status" data-i18n="projects_soon_status"> Em planejamento</div>
                     <div class="project-links">
-                        <a href="#" class="project-link disabled">Em breve</a>
+                        <a href="#" class="project-link disabled" data-i18n="projects_soon_link">Em breve</a>
                     </div>
                 </article>
                 <article class="project-card">
-                    <h3> Roadmap Interativo</h3>
-                    <p>Tecnologias: JavaScript + API</p>
-                    <p class="project-description">Projeto que estou planejando para praticar API e JavaScript avançado. Será um tracker de estudos pessoal.</p>
-                    <div class="project-status"> Em design</div>
+                    <h3 data-i18n="projects_roadmap_title"> Roadmap Interativo</h3>
+                    <p data-i18n="projects_roadmap_techs">Tecnologias: JavaScript + API</p>
+                    <p class="project-description" data-i18n="projects_roadmap_desc">Projeto que estou planejando para
+                        praticar API e JavaScript avançado. Será um tracker de estudos pessoal.</p>
+                    <div class="project-status" data-i18n="projects_roadmap_status"> Em design</div>
                     <div class="project-links">
-                        <a href="#" class="project-link disabled">Em breve</a>
+                        <a href="#" class="project-link disabled" data-i18n="projects_roadmap_link">Em breve</a>
                     </div>
                 </article>
             </div>
@@ -226,24 +256,25 @@
 
         <!-- SEÇÃO CERTIFICAÇÕES -->
         <section id="certificacoes">
-            <h2>Certificações em Andamento</h2>
+            <h2 data-i18n="cert_title">Certificações em Andamento</h2>
             <div class="certificacoes-container">
                 <div class="certificacao-card">
-                    <h3>Formação Full Stack Developer</h3>
-                    <p>Udemy - Cursando</p>
+                    <h3 data-i18n="cert_bootcamp_title">Formação Full Stack Developer</h3>
+                    <p data-i18n="cert_bootcamp_status">Udemy - Cursando</p>
                     <div class="cert-progress">
                         <div class="cert-progress-bar" style="width: 30%"></div>
-                        <span>30% Concluído</span>
+                        <span data-i18n="cert_bootcamp_progress">30% Concluído</span>
                     </div>
                 </div>
                 <div class="certificacao-card">
-                    <h3> Certificados que busco</h3>
+                    <h3 data-i18n="cert_sought_title"> Certificados que busco</h3>
                     <p>React · Node.js · Docker · TypeScript</p>
-                    <p class="small">Assim que concluir cada módulo, adicionarei os certificados aqui</p>
+                    <p class="small" data-i18n="cert_sought_desc">Assim que concluir cada módulo, adicionarei os
+                        certificados aqui</p>
                 </div>
                 <div class="certificacao-card">
-                    <h3> Meta 2026</h3>
-                    <p>Concluir o bootcamp completo e iniciar especialização em Back-End</p>
+                    <h3 data-i18n="cert_goal_title"> Meta 2026</h3>
+                    <p data-i18n="cert_goal_desc">Concluir o bootcamp completo e iniciar especialização em Back-End</p>
                 </div>
             </div>
         </section>
@@ -254,20 +285,23 @@
         <div class="footer-content">
             <div class="footer-info">
                 <p>&copy; 2025-2026 - Adriano Aguiar</p>
-                <p>Portfólio em evolução constante </p>
+                <p data-i18n="footer_subtitle">Portfólio em evolução constante </p>
             </div>
             <div class="footer-contato">
-                <h4>Contato</h4>
+                <h4 data-i18n="footer_contact_title">Contato</h4>
                 <p>📞 <a href="tel:+351910283508">910 283 508</a></p>
                 <p>📧 <a href="mailto:adrianoaguiarpt@gmail.com">adrianoaguiarpt@gmail.com</a></p>
                 <div class="footer-social">
                     <a href="https://github.com/adrianoaguiarpt" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    <a href="https://www.linkedin.com/in/adriano-aguiar-de-paula-/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/adriano-aguiar-de-paula-/" target="_blank"
+                        rel="noopener noreferrer">LinkedIn</a>
                 </div>
             </div>
         </div>
     </footer>
 
+    <script src="translations.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>

@@ -1,11 +1,87 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
+
     // 1. MENU MOBILE
     const btnMenu = document.querySelector('.menu-hamburger');
     const menuUl = document.querySelector('nav ul');
 
     btnMenu.addEventListener('click', () => {
         menuUl.classList.toggle('open');
+    });
+
+    // 1.1 TRANSLATION LOGIC
+    const langBtns = document.querySelectorAll('.lang-btn');
+    const translatableElements = document.querySelectorAll('[data-i18n]');
+    const translatableAlts = document.querySelectorAll('[data-i18n-alt]');
+    const cvButton = document.getElementById('btn-cv');
+
+    function setLanguage(lang) {
+        if (typeof translations === 'undefined' || !translations[lang]) return;
+
+        localStorage.setItem('selectedLanguage', lang);
+        document.documentElement.setAttribute('lang', lang);
+
+        translatableElements.forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (translations[lang][key]) {
+                el.innerHTML = translations[lang][key];
+            }
+        });
+
+        translatableAlts.forEach(el => {
+            const key = el.getAttribute('data-i18n-alt');
+            if (translations[lang][key]) {
+                el.setAttribute('alt', translations[lang][key]);
+            }
+        });
+
+        if (translations[lang].doc_title) {
+            document.title = translations[lang].doc_title;
+        }
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc && translations[lang].doc_meta_desc) {
+            metaDesc.setAttribute('content', translations[lang].doc_meta_desc);
+        }
+
+        if (cvButton) {
+            if (lang === 'pt') {
+                cvButton.setAttribute('href', 'curriculum/AdrianoaguiarCV.pdf');
+                cvButton.setAttribute('download', 'AdrianoaguiarCV.pdf');
+            } else if (lang === 'en') {
+                cvButton.setAttribute('href', 'curriculum/AdrianoaguiarCV_en.pdf');
+                cvButton.setAttribute('download', 'AdrianoaguiarCV_en.pdf');
+            } else if (lang === 'es') {
+                cvButton.setAttribute('href', 'curriculum/AdrianoaguiarCV_es.pdf');
+                cvButton.setAttribute('download', 'AdrianoaguiarCV_es.pdf');
+            }
+        }
+
+        langBtns.forEach(btn => {
+            if (btn.getAttribute('data-lang') === lang) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+    }
+
+    function getInitialLanguage() {
+        const savedLang = localStorage.getItem('selectedLanguage');
+        if (savedLang && translations[savedLang]) return savedLang;
+
+        const browserLang = navigator.language.slice(0, 2);
+        if (translations[browserLang]) return browserLang;
+
+        return 'pt';
+    }
+
+    const initialLang = getInitialLanguage();
+    setLanguage(initialLang);
+
+    langBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const lang = e.currentTarget.getAttribute('data-lang');
+            setLanguage(lang);
+        });
     });
 
     // 2. INTERSECTION OBSERVER (O "Maestro" do site)
@@ -26,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (bar) {
                     bar.style.width = bar.getAttribute('data-width');
                 }
-                
+
                 // Para de observar depois que animou (performance!)
                 globalObserver.unobserve(entry.target);
             }
@@ -50,14 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let particles = [];
     let mouse = { x: null, y: null, radius: 200 };
 
-    function resize() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        createParticles();
-    }
 
-    window.addEventListener('resize', resize);
-    resize();
 
     class Particle {
         constructor() {
@@ -141,7 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const dx = a.x - b.x;
                 const dy = a.y - b.y;
                 const dist = Math.sqrt(dx * dx + dy * dy);
-                
+
                 if (dist < connectionDist) {
                     const alpha = (1 - dist / connectionDist) * 0.25;
                     ctx.save();
@@ -156,6 +225,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     }
+
+    function resize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        createParticles();
+    }
+
+    window.addEventListener('resize', resize);
 
     function animate() {
         ctx.fillStyle = 'rgba(10, 15, 35, 0.05)';
@@ -179,6 +256,7 @@ document.addEventListener('DOMContentLoaded', () => {
         mouse.y = null;
     });
 
+    resize();
     animate();
 
     console.log('%c Cláudia: "Código limpo é código feliz! Bons estudos, Adriano!" ', 'background: #3279f9; color: #fff; padding: 5px;');
