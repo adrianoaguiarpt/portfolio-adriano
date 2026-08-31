@@ -55,6 +55,10 @@ const translations = {
         exp_portfolio_company: "Projeto Pessoal",
         exp_portfolio_period: "2025 - Presente",
         exp_portfolio_desc: "Construindo meus primeiros projetos e documentando minha jornada de aprendizado. Cada novo conhecimento vira um projeto real neste portfólio.",
+        exp_university_title: "Licenciatura em Engenharia Informática",
+        exp_university_company: "Universidade Aberta do Porto",
+        exp_university_period: "Setembro 2026 - Presente",
+        exp_university_desc: "Cursando o programa de Licenciatura em Engenharia Informática, aprofundando conhecimentos em ciência da computação e desenvolvimento de software com fundamentação teórica sólida.",
 
         projects_title: "Meus Projetos",
         projects_subtitle: "Projetos reais que estou construindo enquanto aprendo",
@@ -142,6 +146,10 @@ const translations = {
         exp_portfolio_company: "Personal Project",
         exp_portfolio_period: "2025 - Present",
         exp_portfolio_desc: "Building my first projects and documenting my learning journey. Each new piece of knowledge becomes a real project in this portfolio.",
+        exp_university_title: "Bachelor's degree in Computer Engineering",
+        exp_university_company: "Universidade Aberta do Porto",
+        exp_university_period: "September 2026 - Present",
+        exp_university_desc: "Pursuing a Bachelor's degree in Computer Engineering, deepening knowledge in computer science and software development with solid theoretical foundation.",
 
         projects_title: "My Projects",
         projects_subtitle: "Real projects I am building while learning",
@@ -229,6 +237,10 @@ const translations = {
         exp_portfolio_company: "Proyecto Personal",
         exp_portfolio_period: "2025 - Presente",
         exp_portfolio_desc: "Construyendo mis primeros proyectos y documentando mi viaje de aprendizaje. Cada nuevo conocimiento se convierte en un proyecto real en este portafolio.",
+        exp_university_title: "Licenciatura en Ingeniería Informática",
+        exp_university_company: "Universidade Aberta do Porto",
+        exp_university_period: "Septiembre 2026 - Presente",
+        exp_university_desc: "Cursando el programa de Licenciatura en Ingeniería Informática, profundizando conocimientos en ciencia de la computación y desarrollo de software con sólida fundamentación teórica.",
 
         projects_title: "Mis Proyectos",
         projects_subtitle: "Proyectos reales que estoy construyendo mientras aprendo",

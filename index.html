@@ -1,307 +1,66 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-PT">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfólio de Adriano Aguiar - Desenvolvedor Full Stack em evolução">
-    <title data-i18n="doc_title">Adriano Aguiar | Full Stack Developer - Em Evolução</title>
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-
-    <!-- Google Fonts: Outfit -->
+    <meta name="description" content="Portfólio de Adriano Aguiar, Desenvolvedor Full Stack.">
+    <title>Adriano Aguiar | Desenvolvedor Full Stack</title>
+    <link rel="icon" href="img/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <canvas id="interactive-bg"></canvas>
-    <!-- Background Animated Blobs -->
-    <div class="bg-shape shape-1"></div>
-    <div class="bg-shape shape-2"></div>
-    <div class="bg-shape shape-3"></div>
-
-    <header>
-        <nav>
-            <div class="logo">Adriano Dev</div>
-            <div class="lang-selector">
-                <button class="lang-btn active" data-lang="pt">PT</button>
-                <button class="lang-btn" data-lang="en">EN</button>
-                <button class="lang-btn" data-lang="es">ES</button>
-            </div>
-            <button class="menu-hamburger" aria-label="Abrir menu">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="3" y1="12" x2="21" y2="12"></line>
-                    <line x1="3" y1="6" x2="21" y2="6"></line>
-                    <line x1="3" y1="18" x2="21" y2="18"></line>
-                </svg>
-            </button>
-            <ul>
-                <li><a href="#inicio" data-i18n="nav_inicio">Início</a></li>
-                <li><a href="#sobre" data-i18n="nav_sobre">Sobre Mim</a></li>
-                <li><a href="#habilidades" data-i18n="nav_habilidades">Habilidades</a></li>
-                <li><a href="#experiencias" data-i18n="nav_experiencias">Experiências</a></li>
-                <li><a href="#projetos" data-i18n="nav_projetos">Projetos</a></li>
-                <li><a href="#certificacoes" data-i18n="nav_certificacoes">Certificações</a></li>
-                <li><a href="#contato" data-i18n="nav_contato">Contato</a></li>
-            </ul>
+    <header class="site-header">
+        <nav class="nav container" aria-label="Navegação principal">
+            <a class="brand" href="#inicio" aria-label="Ir para o início">ADRIANO AGUIAR <span>| DEV</span></a>
+            <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
+            <div class="nav-links" id="nav-links"><a href="#inicio">Início</a><a href="#sobre">Sobre</a><a href="#tecnologias">Tecnologias</a><a href="#projetos">Projetos</a><a href="#formacao">Formação</a><a href="#contato">Contacto</a></div>
+            <a class="nav-cta" href="https://github.com/adrianoaguiarpt" target="_blank" rel="noopener noreferrer">Ver GitHub</a>
         </nav>
     </header>
-
     <main>
-        <!-- SEÇÃO INÍCIO (HERO) -->
-        <section id="inicio" class="hero-banner">
-            <div class="banner-overlay"></div>
-            <div class="banner-content">
-                <div class="banner-text">
-                    <h1>Adriano Aguiar</h1>
-                    <p class="banner-subtitle" data-i18n="hero_subtitle">Desenvolvedor Full Stack</p>
-                    <div class="banner-divider"></div>
-                    <p class="banner-description" data-i18n="hero_description">Aprendizado contínuo | Honestidade
-                        técnica | Evolução constante</p>
-                    <div class="banner-cta">
-                        <a href="#projetos" class="cta-button" data-i18n="hero_cta_projects">Explorar Projetos</a>
-                        <a href="curriculum/AdrianoaguiarCV.pdf" download class="cta-button secondary" id="btn-cv"
-                            data-i18n="hero_cta_cv">Baixar Currículo</a>
-                    </div>
-                </div>
-                <div class="banner-photo">
-                    <div class="photo-wrapper">
-                        <img src="img/perfilloco.jpeg" data-i18n-alt="profile_pic_alt"
-                            alt="Foto de perfil de Adriano Aguiar">
-                        <div class="photo-glow"></div>
-                    </div>
-                </div>
-            </div>
+        <section class="hero container" id="inicio">
+            <div class="hero-copy"><p class="eyebrow">PORTFÓLIO · 2026</p><h1>Adriano<br><span>Aguiar.</span></h1><p class="hero-role">Desenvolvedor Full Stack</p><p class="hero-description">Desenvolvendo aplicações web modernas, focadas em performance, código limpo e arquitetura escalável.</p><div class="hero-actions"><a class="button button-primary" href="#projetos">Explorar Projetos</a><a class="button button-secondary" href="curriculum/AdrianoaguiarCV.pdf" download>Baixar Currículo</a></div></div>
+            <div class="hero-visual" aria-label="Foto de perfil de Adriano Aguiar"><div class="profile-frame"><img src="img/perfilloco.jpeg" alt="Adriano Aguiar"></div><div class="profile-caption"><span></span> Disponível para novos desafios</div></div>
         </section>
-
-        <!-- SEÇÃO SOBRE MIM - Versão honesta e transparente -->
-        <section id="sobre">
-            <h2 data-i18n="about_title">Sobre Mim</h2>
-            <div class="sobre-container">
-                <div class="sobre-texto">
-                    <p data-i18n="about_who_i_am"> <strong>Quem sou eu</strong></p>
-                    <p data-i18n="about_description">Sou um desenvolvedor em formação que não tem medo de dizer:
-                        <strong>"Ainda não sei, mas vou aprender"</strong>. Minha maior qualidade é a curiosidade e o
-                        comprometimento - quando me proponho a algo, vou até o fim com maestria.
-                    </p>
-
-                    <p data-i18n="about_journey_title">📚 <strong>Minha jornada de estudos</strong></p>
-                    <p data-i18n="about_journey_description">Atualmente estou cursando o <strong>Formação Full Stack
-                            Developer da Udemy</strong>, um bootcamp completo que cobre desde o front-end até o
-                        back-end. Meu objetivo é dominar todo o ciclo de desenvolvimento de um site, do início ao fim.
-                    </p>
-
-                    <p data-i18n="about_skills_already_title"> <strong>O que JÁ sei (fundamentos sólidos)</strong></p>
-                    <div class="skill-badge-container">
-                        <span class="skill-badge">HTML5</span>
-                        <span class="skill-badge">CSS3</span>
-                        <span class="skill-badge">JavaScript</span>
-                        <span class="skill-badge">Git</span>
-                    </div>
-
-                    <p data-i18n="about_skills_learning_title"> <strong>O que estou APRENDENDO agora</strong></p>
-                    <div class="skill-badge-container learning">
-                        <span class="skill-badge learning">FlexBox</span>
-                        <span class="skill-badge learning">Grid</span>
-                        <span class="skill-badge learning">Node.js</span>
-                        <span class="skill-badge learning">TypeScript</span>
-                    </div>
-
-                    <p data-i18n="about_roadmap_title">🎯 <strong>Meu roadmap de estudos (2025-2026)</strong></p>
-                    <div class="roadmap">
-                        <div class="roadmap-phase">
-                            <h4 data-i18n="about_phase1_title">Fase 1 - Base sólida - concluída</h4>
-                            <p>HTML, CSS, JavaScript, Git</p>
-                        </div>
-                        <div class="roadmap-phase">
-                            <h4 data-i18n="about_phase2_title">Fase 2 - Front-end Moderno em andamento</h4>
-                            <p>React, Tailwind, FlexBox, Grid</p>
-                        </div>
-                        <div class="roadmap-phase">
-                            <h4 data-i18n="about_phase3_title">Fase 3 - Back-end em andamento</h4>
-                            <p>Node.js, TypeScript, API, Prisma</p>
-                        </div>
-                        <div class="roadmap-phase">
-                            <h4 data-i18n="about_phase4_title">Fase 4 - Banco de Dados em andamento</h4>
-                            <p>MySQL, MongoDB</p>
-                        </div>
-                        <div class="roadmap-phase">
-                            <h4 data-i18n="about_phase5_title">Fase 5 - DevOps em andamento</h4>
-                            <p>Docker, Next.js</p>
-                        </div>
-                    </div>
-
-                    <p data-i18n="about_philosophy_title"> <strong>Minha filosofia</strong></p>
-                    <p data-i18n="about_philosophy_description">Este portfólio é <strong>vivo</strong>. Ele vai evoluir
-                        junto comigo. Conforme eu for aprendendo novas tecnologias e construindo projetos, vou
-                        atualizando cada seção. Prefiro mostrar a verdade do que fingir que sei tudo. Recrutadores podem
-                        confiar: o que está aqui é real, e o que não está, estou correndo atrás.</p>
-
-                    <p data-i18n="about_goal_title"> <strong>Meu objetivo profissional</strong></p>
-                    <p data-i18n="about_goal_description">Conquistar minha primeira oportunidade como desenvolvedor
-                        júnior, onde possa continuar aprendendo na prática, contribuindo com dedicação e crescendo junto
-                        com a empresa.</p>
-
-                    <div class="sobre-mensagem">
-                        <p data-i18n="about_quote"> <em>"Não sei tudo, mas sei onde encontrar as respostas. E quando
-                                aprendo, compartilho através dos meus projetos."</em></p>
-                    </div>
-                </div>
-            </div>
+        <section class="section container" id="sobre">
+            <div class="section-heading"><p class="eyebrow">01 · SOBRE MIM</p><h2>Construo com propósito,<br>aprendo com consistência.</h2></div>
+            <div class="about-layout"><div class="about-intro"><p>Sou um desenvolvedor em formação, orientado pela curiosidade e pela procura de soluções que façam sentido. Gosto de transformar problemas complexos em experiências digitais simples, claras e funcionais.</p><p>Com um perfil analítico e uma abordagem cuidadosa ao código, invisto em projetos com impacto real enquanto consolido a minha formação em Engenharia Informática e desenvolvimento Full Stack.</p></div><div class="principles-grid"><article class="principle-card"><span>01</span><h3>Rigor técnico</h3><p>Decisões sustentadas por código limpo, organização e boas práticas.</p></article><article class="principle-card"><span>02</span><h3>Resolução de problemas</h3><p>Investigo, simplifico e entrego soluções orientadas ao utilizador.</p></article><article class="principle-card"><span>03</span><h3>Evolução contínua</h3><p>Estudo constante e aplicação prática de cada novo conhecimento.</p></article></div></div>
         </section>
-
-        <!-- SEÇÃO HABILIDADES -->
-        <section id="habilidades">
-            <h2 data-i18n="skills_title">Habilidades</h2>
-            <div class="habilidades-container">
-                <div class="skill-card">
-                    <h3 data-i18n="skills_domino_title"> Já Domino</h3>
-                    <p>HTML, CSS, JavaScript, Git</p>
-                    <div class="progress-bar-skill">
-                        <div class="progress" style="width: 85%"></div>
-                    </div>
-                    <span class="skill-level" data-i18n="skills_domino_level">Intermediário/Avançado</span>
-                </div>
-                <div class="skill-card">
-                    <h3 data-i18n="skills_learning_title"> Estudando Agora</h3>
-                    <p>FlexBox, Grid, Node.js, TypeScript</p>
-                    <div class="progress-bar-skill">
-                        <div class="progress" style="width: 40%"></div>
-                    </div>
-                    <span class="skill-level" data-i18n="skills_learning_level">Em progresso</span>
-                </div>
-                <div class="skill-card">
-                    <h3 data-i18n="skills_next_title"> Próximos Passos</h3>
-                    <p>React, Tailwind, Next, API, Prisma</p>
-                    <div class="progress-bar-skill">
-                        <div class="progress" style="width: 15%"></div>
-                    </div>
-                    <span class="skill-level" data-i18n="skills_next_level">Planejado</span>
-                </div>
-                <div class="skill-card">
-                    <h3 data-i18n="skills_future_title"> Futuro</h3>
-                    <p>MySQL, MongoDB, Docker</p>
-                    <div class="progress-bar-skill">
-                        <div class="progress" style="width: 5%"></div>
-                    </div>
-                    <span class="skill-level" data-i18n="skills_future_level">No roadmap</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- SEÇÃO EXPERIÊNCIAS -->
-        <section id="experiencias">
-            <h2 data-i18n="exp_title">Experiências</h2>
-            <div class="experiencias-container">
-                <div class="experiencia-card">
-                    <h3 data-i18n="exp_bootcamp_title"> Formação Full Stack Developer</h3>
-                    <p class="empresa" data-i18n="exp_bootcamp_company">Udemy - Bootcamp Completo</p>
-                    <p class="periodo" data-i18n="exp_bootcamp_period">2025 - Presente</p>
-                    <p data-i18n="exp_bootcamp_desc">Aprendendo: HTML, CSS, FlexBox, Grid, JavaScript, Node, TypeScript,
-                        React, Tailwind, Next, MySQL, MongoDB, Docker, Git, API e Prisma.</p>
-                </div>
-                <div class="experiencia-card">
-                    <h3 data-i18n="exp_portfolio_title">Portfólio em Evolução</h3>
-                    <p class="empresa" data-i18n="exp_portfolio_company">Projeto Pessoal</p>
-                    <p class="periodo" data-i18n="exp_portfolio_period">2025 - Presente</p>
-                    <p data-i18n="exp_portfolio_desc">Construindo meus primeiros projetos e documentando minha jornada
-                        de aprendizado. Cada novo conhecimento vira um projeto real neste portfólio.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- SEÇÃO PROJETOS -->
-        <section id="projetos">
-            <h2 data-i18n="projects_title">Meus Projetos</h2>
-            <p class="section-subtitle" data-i18n="projects_subtitle">Projetos reais que estou construindo enquanto
-                aprendo</p>
-            <div class="projects-grid">
-                <article class="project-card">
-                    <h3 data-i18n="projects_portfolio_title"> Portfólio Pessoal</h3>
-                    <p data-i18n="projects_portfolio_techs">Tecnologias: HTML, CSS, JavaScript</p>
-                    <p class="project-description" data-i18n="projects_portfolio_desc">Este portfólio que você está
-                        vendo! Construído do zero e será atualizado a cada nova tecnologia aprendida.</p>
-                    <div class="project-status" data-i18n="projects_portfolio_status"> Concluído - Versão 1.0</div>
-                    <div class="project-links">
-                        <a href="#" class="project-link" data-i18n="projects_portfolio_link">Ver projeto →</a>
-                    </div>
-                </article>
-                <article class="project-card">
-                    <h3 data-i18n="projects_soon_title"> Em Breve...</h3>
-                    <p data-i18n="projects_soon_techs">Próximo projeto: A ser definido</p>
-                    <p class="project-description" data-i18n="projects_soon_desc">Assim que eu dominar a próxima
-                        tecnologia (React ou Node.js), construirei um projeto completo e postarei aqui.</p>
-                    <div class="project-status" data-i18n="projects_soon_status"> Em planejamento</div>
-                    <div class="project-links">
-                        <a href="#" class="project-link disabled" data-i18n="projects_soon_link">Em breve</a>
-                    </div>
-                </article>
-                <article class="project-card">
-                    <h3 data-i18n="projects_roadmap_title"> Roadmap Interativo</h3>
-                    <p data-i18n="projects_roadmap_techs">Tecnologias: JavaScript + API</p>
-                    <p class="project-description" data-i18n="projects_roadmap_desc">Projeto que estou planejando para
-                        praticar API e JavaScript avançado. Será um tracker de estudos pessoal.</p>
-                    <div class="project-status" data-i18n="projects_roadmap_status"> Em design</div>
-                    <div class="project-links">
-                        <a href="#" class="project-link disabled" data-i18n="projects_roadmap_link">Em breve</a>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <!-- SEÇÃO CERTIFICAÇÕES -->
-        <section id="certificacoes">
-            <h2 data-i18n="cert_title">Certificações em Andamento</h2>
-            <div class="certificacoes-container">
-                <div class="certificacao-card">
-                    <h3 data-i18n="cert_bootcamp_title">Formação Full Stack Developer</h3>
-                    <p data-i18n="cert_bootcamp_status">Udemy - Cursando</p>
-                    <div class="cert-progress">
-                        <div class="cert-progress-bar" style="width: 30%"></div>
-                        <span data-i18n="cert_bootcamp_progress">30% Concluído</span>
-                    </div>
-                </div>
-                <div class="certificacao-card">
-                    <h3 data-i18n="cert_sought_title"> Certificados que busco</h3>
-                    <p>React · Node.js · Docker · TypeScript</p>
-                    <p class="small" data-i18n="cert_sought_desc">Assim que concluir cada módulo, adicionarei os
-                        certificados aqui</p>
-                </div>
-                <div class="certificacao-card">
-                    <h3 data-i18n="cert_goal_title"> Meta 2026</h3>
-                    <p data-i18n="cert_goal_desc">Concluir o bootcamp completo e iniciar especialização em Back-End</p>
-                </div>
-            </div>
-        </section>
+        <section class="section section-surface" id="tecnologias"><div class="container"><div class="section-heading"><p class="eyebrow">02 · TECH STACK</p><h2>Tecnologias que fazem<br>parte do meu processo.</h2></div><div class="stack-grid"><article class="stack-card"><div class="stack-number">01</div><h3>Frontend</h3><p>Interfaces responsivas, acessíveis e centradas na experiência.</p><div class="badges"><span>HTML5</span><span>CSS3</span><span>JavaScript ES6+</span><span>TypeScript</span><span>React</span><span>Tailwind CSS</span></div></article><article class="stack-card"><div class="stack-number">02</div><h3>Backend & Dados</h3><p>APIs consistentes e persistência de dados pensadas para escalar.</p><div class="badges"><span>Node.js</span><span>APIs RESTful</span><span>Express</span><span>MySQL</span><span>PostgreSQL</span><span>Prisma</span><span>Docker</span></div></article><article class="stack-card"><div class="stack-number">03</div><h3>Ferramentas</h3><p>Fluxos de trabalho colaborativos, previsíveis e testáveis.</p><div class="badges"><span>Git</span><span>GitHub</span><span>Linux</span><span>VS Code</span><span>Vitest</span><span>Jest</span></div></article></div></div></section>
+        <section class="section container" id="projetos"><div class="section-heading section-heading-row"><div><p class="eyebrow">03 · PROJETOS</p><h2>Aplicações em destaque.</h2></div><p class="section-note">Seleção de projetos atuais e espaço em evolução para novas soluções Full Stack.</p></div><div class="projects-grid"><article class="project-card project-featured"><div class="project-top"><span class="project-index">01</span><span class="project-status">EM PRODUÇÃO</span></div><h3>Portfólio Pessoal</h3><p>Website responsivo desenvolvido para apresentar a minha evolução técnica, organizar projetos e criar uma presença profissional clara. A interface prioriza hierarquia visual, desempenho e navegação intuitiva.</p><div class="badges"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div><div class="project-links"><a href="https://github.com/adrianoaguiarpt" target="_blank" rel="noopener noreferrer">Código no GitHub <b>↗</b></a><a href="#inicio">Demonstração Online <b>↗</b></a></div></article><article class="project-card"><div class="project-top"><span class="project-index">02</span><span class="project-status muted">EM DESENVOLVIMENTO</span></div><h3>Aplicação Full Stack</h3><p>Estrutura preparada para uma solução completa com autenticação, API REST, persistência de dados e uma interface React focada numa experiência de utilização eficiente.</p><div class="badges"><span>React</span><span>Node.js</span><span>PostgreSQL</span><span>Prisma</span></div><div class="project-links"><a class="link-disabled" href="#projetos">Código no GitHub <b>↗</b></a><a class="link-disabled" href="#projetos">Demonstração Online <b>↗</b></a></div></article><article class="project-card"><div class="project-top"><span class="project-index">03</span><span class="project-status muted">PRÓXIMO PROJETO</span></div><h3>Dashboard de Dados</h3><p>Espaço reservado para uma aplicação orientada a dados, com visualização de métricas, integração com APIs e uma arquitetura modular pronta para crescer.</p><div class="badges"><span>TypeScript</span><span>APIs RESTful</span><span>Docker</span></div><div class="project-links"><a class="link-disabled" href="#projetos">Código no GitHub <b>↗</b></a><a class="link-disabled" href="#projetos">Demonstração Online <b>↗</b></a></div></article></div></section>
+        <section class="section section-surface" id="formacao"><div class="container formation-layout"><div class="section-heading"><p class="eyebrow">04 · FORMAÇÃO</p><h2>Uma base sólida<br>em construção.</h2><p class="formation-summary">Aprofundo fundamentos de engenharia de software e transformo o estudo em prática através de projetos.</p></div><ol class="timeline"><li><span>2026 — Atual</span><div><h3>Licenciatura em Engenharia Informática</h3><p>Universidade Aberta do Porto · Formação académica em computação, software e sistemas.</p></div></li><li><span>2025 — Atual</span><div><h3>Formação Full Stack Developer</h3><p>Udemy · Percurso prático de frontend, backend, bases de dados, APIs e DevOps.</p></div></li><li><span>Em progresso</span><div><h3>Especialização contínua</h3><p>React, TypeScript, Node.js, arquitetura de APIs, testes e ambiente Docker.</p></div></li></ol></div></section>
+        <section class="contact-section container" id="contato"><div><p class="eyebrow">05 · CONTACTO</p><h2>Vamos construir<br>algo relevante.</h2><p>Estou disponível para conversar sobre oportunidades, colaboração e projetos que exijam atenção ao detalhe.</p></div><div class="contact-cards"><a href="#projetos"><span>VISIBILIDADE &amp; PRESENÇA DIGITAL</span><strong>Soluções Web de Alta Performance</strong><small>Leve o seu negócio para onde os clientes estão. Desenvolvimento de sites e sistemas web integrados às tecnologias mais modernas do mercado.</small><b aria-hidden="true">↗</b></a><a href="#projetos"><span>TECNOLOGIA &amp; ESCALABILIDADE</span><strong>Ferramentas Sob Medida para o Seu Negócio</strong><small>Inovação técnica para tirar empresas da invisibilidade e automatizar processos com foco em resultados e crescimento.</small><b aria-hidden="true">↗</b></a><a href="mailto:adrianoaguiarpt@gmail.com"><span>CONTATO DIRETO</span><strong>adrianoaguiarpt@gmail.com</strong><small>Fale diretamente sobre o seu projeto, orçamento ou oportunidade de colaboração.</small><b aria-hidden="true">↗</b></a></div></section>
     </main>
-
-    <!-- SEÇÃO CONTATO -->
-    <footer id="contato">
-        <div class="footer-content">
-            <div class="footer-info">
-                <p>&copy; 2025-2026 - Adriano Aguiar</p>
-                <p data-i18n="footer_subtitle">Portfólio em evolução constante </p>
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-column footer-brand">
+                <a class="footer-logo" href="#inicio">ADRIANO AGUIAR <span>| DEV</span></a>
+                <p>Desenvolvedor Full Stack focado na construção de aplicações web modernas, escaláveis e com código limpo.</p>
             </div>
-            <div class="footer-contato">
-                <h4 data-i18n="footer_contact_title">Contato</h4>
-                <p>📞 <a href="tel:+351910283508">910 283 508</a></p>
-                <p>📧 <a href="mailto:adrianoaguiarpt@gmail.com">adrianoaguiarpt@gmail.com</a></p>
-                <div class="footer-social">
+            <div class="footer-column">
+                <h2>CONTACTO</h2>
+                <address class="footer-list">
+                    <a href="mailto:adrianoaguiarpt@gmail.com">adrianoaguiarpt@gmail.com</a>
+                    <a href="tel:+351910283508">+351 910 283 508</a>
+                    <span>Porto, Portugal</span>
+                </address>
+            </div>
+            <div class="footer-column">
+                <h2>REDES SOCIAIS</h2>
+                <nav class="footer-list" aria-label="Redes sociais">
+                    <a href="https://www.linkedin.com/in/adrianoaguiarpt/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                     <a href="https://github.com/adrianoaguiarpt" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    <a href="https://www.linkedin.com/in/adriano-aguiar-de-paula-/" target="_blank"
-                        rel="noopener noreferrer">LinkedIn</a>
-                </div>
+                    <a href="https://www.instagram.com/adrianoaguiardev?utm_source=qr" target="_blank" rel="noopener noreferrer">Instagram</a>
+                </nav>
             </div>
         </div>
+        <div class="container footer-bottom">
+            <p>© 2026 Adriano Aguiar. Todos os direitos reservados.</p>
+        </div>
     </footer>
-
-    <script src="translations.js"></script>
     <script src="script.js"></script>
 </body>
-
 </html>
