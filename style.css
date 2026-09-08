@@ -12,10 +12,23 @@
 .footer-list a:hover,.footer-list a:focus-visible{color:#fff;transform:translateX(3px)}
 .footer-bottom{border-top:1px solid #27272a;padding:22px 0 25px;text-align:center;color:#71717a;font-size:.72rem}
 
+.formation-layout{gap:64px}
+.credentials{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.credential-card{display:flex;flex-direction:column;padding:26px;border:1px solid var(--line);background:rgba(30,41,59,.55);transition:.2s}
+.credential-card:hover{border-color:#526783;transform:translateY(-4px)}
+.credential-featured{border-color:rgba(56,189,248,.55);background:linear-gradient(145deg,rgba(14,165,233,.1),rgba(30,41,59,.55) 55%)}
+.credential-wide{grid-column:1 / -1}
+.credential-top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.credential-org{color:var(--cyan);font-size:.66rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase}
+.credential-status{padding:4px 7px;border:1px solid rgba(56,189,248,.34);color:var(--cyan);font-size:.56rem;font-weight:700;letter-spacing:.06em;white-space:nowrap}
+.credential-status.muted{color:var(--muted);border-color:var(--line)}
+.credential-card h3{margin-top:20px;font-size:1.08rem}
+.credential-card p{margin-top:10px;color:var(--muted);font-size:.83rem}
+
 @media(max-width:690px){
 	.site-footer .footer-content{grid-template-columns:1fr;gap:42px;padding:54px 0 48px}
 	.footer-brand p{max-width:420px}
 	.footer-column h2{margin-bottom:18px}
 	.footer-bottom{padding:20px 0 23px}
 }
-@media(max-width:900px){.nav-links{gap:14px}.nav-links a{font-size:.72rem}.hero{gap:40px}.about-layout,.formation-layout,.contact-section{gap:50px}.principles-grid{grid-template-columns:1fr}.stack-grid,.projects-grid{grid-template-columns:1fr}.stack-card p{min-height:auto}.project-card{min-height:330px}}@media(max-width:690px){.container{width:min(100% - 36px,var(--container))}.nav{height:66px;gap:15px}.nav-cta{display:none}.menu-toggle{display:grid;width:36px;height:32px;margin-left:auto;padding:7px;border:1px solid var(--line);border-radius:4px;background:transparent;cursor:pointer}.menu-toggle span{height:1px;background:var(--text)}.nav-links{position:absolute;display:none;flex-direction:column;align-items:flex-start;gap:18px;top:66px;left:0;right:0;padding:24px 18px;background:#111b2d;border-bottom:1px solid var(--line)}.nav-links.open{display:flex}.nav-links a{font-size:.9rem}.hero{min-height:auto;grid-template-columns:1fr;padding:76px 0 96px}.hero-visual{justify-self:start;margin:20px 0 0 28px}.profile-frame{width:min(290px,calc(100vw - 76px))}.section{padding:76px 0}.section-heading-row,.about-layout,.formation-layout,.contact-section{display:grid;grid-template-columns:1fr}.about-layout,.formation-layout,.contact-section{margin-top:42px}.section-heading-row{gap:20px}.section-note{max-width:100%}.projects-grid,.stack-grid{margin-top:38px}.formation-layout .section-heading{margin-top:0}.contact-section{gap:38px}.footer-content{padding:20px 0;min-height:auto;align-items:flex-start;flex-direction:column;gap:3px}.profile-caption{left:-18px}}
+@media(max-width:900px){.nav-links{gap:14px}.nav-links a{font-size:.72rem}.hero{gap:40px}.about-layout,.formation-layout,.contact-section{gap:50px}.principles-grid{grid-template-columns:1fr}.stack-grid,.projects-grid,.credentials{grid-template-columns:1fr}.stack-card p{min-height:auto}.project-card{min-height:330px}}@media(max-width:690px){.container{width:min(100% - 36px,var(--container))}.nav{height:66px;gap:15px}.nav-cta{display:none}.menu-toggle{display:grid;width:36px;height:32px;margin-left:auto;padding:7px;border:1px solid var(--line);border-radius:4px;background:transparent;cursor:pointer}.menu-toggle span{height:1px;background:var(--text)}.nav-links{position:absolute;display:none;flex-direction:column;align-items:flex-start;gap:18px;top:66px;left:0;right:0;padding:24px 18px;background:#111b2d;border-bottom:1px solid var(--line)}.nav-links.open{display:flex}.nav-links a{font-size:.9rem}.hero{min-height:auto;grid-template-columns:1fr;padding:76px 0 96px}.hero-visual{justify-self:start;margin:20px 0 0 28px}.profile-frame{width:min(290px,calc(100vw - 76px))}.section{padding:76px 0}.section-heading-row,.about-layout,.formation-layout,.contact-section{display:grid;grid-template-columns:1fr}.about-layout,.formation-layout,.contact-section{margin-top:42px}.section-heading-row{gap:20px}.section-note{max-width:100%}.projects-grid,.stack-grid{margin-top:38px}.formation-layout .section-heading{margin-top:0}.contact-section{gap:38px}.footer-content{padding:20px 0;min-height:auto;align-items:flex-start;flex-direction:column;gap:3px}.profile-caption{left:-18px}}
