@@ -13,11 +13,11 @@
     <meta property="og:description" content="Aplicações web modernas com foco em performance, código limpo e arquitetura escalável.">
     <meta property="og:locale" content="pt_PT">
     <meta property="og:url" content="https://adrianoaguiarpt.github.io/portifolio-adriano/">
-    <meta property="og:image" content="https://adrianoaguiarpt.github.io/portifolio-adriano/img/perfilloco.jpeg">
+    <meta property="og:image" content="https://adrianoaguiarpt.github.io/portifolio-adriano/img/adriano-og.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Adriano Aguiar — Desenvolvedor Full Stack">
     <meta name="twitter:description" content="Aplicações web modernas com foco em performance, código limpo e arquitetura escalável.">
-    <meta name="twitter:image" content="https://adrianoaguiarpt.github.io/portifolio-adriano/img/perfilloco.jpeg">
+    <meta name="twitter:image" content="https://adrianoaguiarpt.github.io/portifolio-adriano/img/adriano-og.jpg">
     <link rel="icon" href="img/favicon.ico" sizes="any">
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
@@ -37,16 +37,86 @@
         </nav>
     </header>
     <main>
-        <section class="hero container" id="inicio">
-            <div class="hero-copy"><p class="eyebrow">PORTFÓLIO · 2026</p><h1>Adriano<br><span>Aguiar.</span></h1><p class="hero-role">Desenvolvedor Full Stack</p><p class="hero-description">Desenvolvendo aplicações web modernas, focadas em performance, código limpo e arquitetura escalável.</p><div class="hero-actions"><a class="button button-primary" href="#projetos">Ver Projetos</a><a class="button button-secondary" href="https://www.linkedin.com/in/adrianoaguiarpt/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div></div>
-            <div class="hero-visual" aria-label="Foto de perfil de Adriano Aguiar"><div class="profile-frame"><img src="img/perfilloco.jpeg" alt="Adriano Aguiar"></div><div class="profile-caption"><span></span> Disponível para novos desafios</div></div>
+        <section class="hero" id="inicio">
+            <div class="hero__glow" aria-hidden="true"></div>
+            <div class="hero__container">
+                <div class="hero__content">
+                    <span class="hero__badge"><span class="hero__dot"></span> Disponível para projetos</span>
+                    <h1 class="hero__title">Olá, sou o <span class="hero__highlight">Adriano Aguiar</span></h1>
+                    <p class="hero__role">Desenvolvedor Full Stack</p>
+                    <p class="hero__text">Crio aplicações web modernas, rápidas e bem pensadas — do front-end ao back-end — com React, Next.js, Node.js e TypeScript.</p>
+                    <div class="hero__actions">
+                        <a href="#projetos" class="btn btn--primary">Ver projetos</a>
+                        <a href="#contato" class="btn btn--ghost">Fala comigo</a>
+                    </div>
+                    <ul class="hero__stack" aria-label="Tecnologias">
+                        <li>React</li><li>Next.js</li><li>TypeScript</li><li>Node.js</li><li>Tailwind</li><li>Docker</li>
+                    </ul>
+                </div>
+                <div class="hero__media">
+                    <img src="img/adriano-hero.webp" alt="Adriano Aguiar, desenvolvedor full stack" class="hero__photo" width="453" height="918" loading="eager" fetchpriority="high">
+                    <div class="hero__card"><strong>Engenharia Informática</strong><span>Universidade Aberta</span></div>
+                </div>
+            </div>
         </section>
         <section class="section container" id="sobre">
             <div class="section-heading"><p class="eyebrow">01 · SOBRE MIM</p><h2>Construo com propósito,<br>aprendo com consistência.</h2></div>
             <div class="about-layout"><div class="about-intro"><p>Sou um desenvolvedor em formação, orientado pela curiosidade e pela procura de soluções que façam sentido. Gosto de transformar problemas complexos em experiências digitais simples, claras e funcionais.</p><p>Com um perfil analítico e uma abordagem cuidadosa ao código, invisto em projetos com impacto real enquanto consolido a minha formação em Engenharia Informática e desenvolvimento Full Stack.</p></div><div class="principles-grid"><article class="principle-card"><span>01</span><h3>Rigor técnico</h3><p>Decisões sustentadas por código limpo, organização e boas práticas.</p></article><article class="principle-card"><span>02</span><h3>Resolução de problemas</h3><p>Investigo, simplifico e entrego soluções orientadas ao utilizador.</p></article><article class="principle-card"><span>03</span><h3>Evolução contínua</h3><p>Estudo constante e aplicação prática de cada novo conhecimento.</p></article></div></div>
         </section>
         <section class="section section-surface" id="tecnologias"><div class="container"><div class="section-heading"><p class="eyebrow">02 · TECH STACK</p><h2>Tecnologias que fazem<br>parte do meu processo.</h2></div><div class="stack-grid"><article class="stack-card"><div class="stack-number">01</div><h3>Frontend</h3><p>Interfaces responsivas, acessíveis e centradas na experiência.</p><div class="badges"><span>HTML5</span><span>CSS3</span><span>JavaScript ES6+</span><span>TypeScript</span><span>React</span><span>Tailwind CSS</span></div></article><article class="stack-card"><div class="stack-number">02</div><h3>Backend & Dados</h3><p>APIs consistentes e persistência de dados pensadas para escalar.</p><div class="badges"><span>Node.js</span><span>APIs RESTful</span><span>Express</span><span>MySQL</span><span>PostgreSQL</span><span>Prisma</span><span>Docker</span></div></article><article class="stack-card"><div class="stack-number">03</div><h3>Ferramentas</h3><p>Fluxos de trabalho colaborativos, previsíveis e testáveis.</p><div class="badges"><span>Git</span><span>GitHub</span><span>Linux</span><span>VS Code</span><span>Vitest</span><span>Jest</span></div></article></div></div></section>
-        <section class="section container" id="projetos"><div class="section-heading section-heading-row"><div><p class="eyebrow">03 · PROJETOS</p><h2>Aplicações em destaque.</h2></div><p class="section-note">Seleção de projetos atuais e espaço em evolução para novas soluções Full Stack.</p></div><div class="projects-grid"><article class="project-card project-featured"><div class="project-top"><span class="project-index">01</span><span class="project-status">EM PRODUÇÃO</span></div><h3>Portfólio Pessoal</h3><p>Website responsivo desenvolvido para apresentar a minha evolução técnica, organizar projetos e criar uma presença profissional clara. A interface prioriza hierarquia visual, desempenho e navegação intuitiva.</p><div class="badges"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div><div class="project-links"><a href="https://github.com/adrianoaguiarpt" target="_blank" rel="noopener noreferrer">Código no GitHub <b>↗</b></a><a href="#inicio">Demonstração Online <b>↗</b></a></div></article><article class="project-card"><div class="project-top"><span class="project-index">02</span><span class="project-status muted">EM DESENVOLVIMENTO</span></div><h3>Aplicação Full Stack</h3><p>Estrutura preparada para uma solução completa com autenticação, API REST, persistência de dados e uma interface React focada numa experiência de utilização eficiente.</p><div class="badges"><span>React</span><span>Node.js</span><span>PostgreSQL</span><span>Prisma</span></div><div class="project-links"><a class="link-disabled" href="#projetos">Código no GitHub <b>↗</b></a><a class="link-disabled" href="#projetos">Demonstração Online <b>↗</b></a></div></article><article class="project-card"><div class="project-top"><span class="project-index">03</span><span class="project-status muted">PRÓXIMO PROJETO</span></div><h3>Dashboard de Dados</h3><p>Espaço reservado para uma aplicação orientada a dados, com visualização de métricas, integração com APIs e uma arquitetura modular pronta para crescer.</p><div class="badges"><span>TypeScript</span><span>APIs RESTful</span><span>Docker</span></div><div class="project-links"><a class="link-disabled" href="#projetos">Código no GitHub <b>↗</b></a><a class="link-disabled" href="#projetos">Demonstração Online <b>↗</b></a></div></article></div></section>
+        <section class="section container" id="projetos"><div class="section-heading section-heading-row"><div><p class="eyebrow">03 · PROJETOS</p><h2>Aplicações em destaque.</h2></div><p class="section-note">Seleção de projetos atuais e espaço em evolução para novas soluções Full Stack.</p></div><div class="carousel" data-interval="4500" role="region" aria-roledescription="carrossel" aria-label="Galeria de projetos">
+            <div class="carousel__window">
+                <div class="carousel__bar" aria-hidden="true"><i></i><i></i><i></i></div>
+                <div class="carousel__viewport">
+                    <div class="carousel__track">
+                    <!-- Para adicionar um slide: guarda a imagem em img/projetos/ (16:10, ex. 1280x800) e copia um bloco <figure> -->
+                    <figure class="carousel__slide">
+                        <img src="img/projetos/portfolio-inicio.webp" alt="Portfólio Pessoal — Página inicial" width="1280" height="800" loading="lazy" decoding="async">
+                        <figcaption><strong>Portfólio Pessoal · Página inicial</strong><span>Hero com foto recortada e fundo azul-marinho</span></figcaption>
+                    </figure>
+                    <figure class="carousel__slide">
+                        <img src="img/projetos/portfolio-sobre.webp" alt="Portfólio Pessoal — Sobre mim" width="1280" height="800" loading="lazy" decoding="async">
+                        <figcaption><strong>Portfólio Pessoal · Sobre mim</strong><span>Apresentação e princípios de trabalho</span></figcaption>
+                    </figure>
+                    <figure class="carousel__slide">
+                        <img src="img/projetos/portfolio-tecnologias.webp" alt="Portfólio Pessoal — Tecnologias" width="1280" height="800" loading="lazy" decoding="async">
+                        <figcaption><strong>Portfólio Pessoal · Tecnologias</strong><span>Stack organizado por áreas</span></figcaption>
+                    </figure>
+                    <figure class="carousel__slide">
+                        <img src="img/projetos/portfolio-formacao.webp" alt="Portfólio Pessoal — Formação" width="1280" height="800" loading="lazy" decoding="async">
+                        <figcaption><strong>Portfólio Pessoal · Formação</strong><span>Percurso académico e cursos</span></figcaption>
+                    </figure>
+                    <figure class="carousel__slide">
+                        <img src="img/projetos/portfolio-telemovel.webp" alt="Portfólio Pessoal — Versão telemóvel" width="1280" height="800" loading="lazy" decoding="async">
+                        <figcaption><strong>Portfólio Pessoal · Versão telemóvel</strong><span>Layout responsivo em ecrãs pequenos</span></figcaption>
+                    </figure>
+                    <figure class="carousel__slide">
+                        <img src="img/projetos/james-inicio.webp" alt="Studio James Tattoo — Página inicial" width="1280" height="800" loading="lazy" decoding="async">
+                        <figcaption><strong>Studio James Tattoo · Página inicial</strong><span>Site para estúdio de tatuagem, com modo claro e escuro</span><em><a href="https://adrianoaguiarpt.github.io/studio-james-tattoo/" target="_blank" rel="noopener noreferrer">Ver site ↗</a><a href="https://github.com/adrianoaguiarpt/studio-james-tattoo" target="_blank" rel="noopener noreferrer">Código ↗</a></em></figcaption>
+                    </figure>
+                    <figure class="carousel__slide">
+                        <img src="img/projetos/james-trabalhos.webp" alt="Studio James Tattoo — Trabalhos" width="1280" height="800" loading="lazy" decoding="async">
+                        <figcaption><strong>Studio James Tattoo · Trabalhos</strong><span>Galeria de tatuagens por estilo</span><em><a href="https://adrianoaguiarpt.github.io/studio-james-tattoo/" target="_blank" rel="noopener noreferrer">Ver site ↗</a><a href="https://github.com/adrianoaguiarpt/studio-james-tattoo" target="_blank" rel="noopener noreferrer">Código ↗</a></em></figcaption>
+                    </figure>
+                    <figure class="carousel__slide">
+                        <img src="img/projetos/james-sobre.webp" alt="Studio James Tattoo — Sobre o artista" width="1280" height="800" loading="lazy" decoding="async">
+                        <figcaption><strong>Studio James Tattoo · Sobre o artista</strong><span>Apresentação do tatuador e especialidades</span><em><a href="https://adrianoaguiarpt.github.io/studio-james-tattoo/" target="_blank" rel="noopener noreferrer">Ver site ↗</a><a href="https://github.com/adrianoaguiarpt/studio-james-tattoo" target="_blank" rel="noopener noreferrer">Código ↗</a></em></figcaption>
+                    </figure>
+                    <figure class="carousel__slide">
+                        <img src="img/projetos/james-contacto.webp" alt="Studio James Tattoo — Contacto" width="1280" height="800" loading="lazy" decoding="async">
+                        <figcaption><strong>Studio James Tattoo · Contacto</strong><span>Formulário, contactos e horário</span><em><a href="https://adrianoaguiarpt.github.io/studio-james-tattoo/" target="_blank" rel="noopener noreferrer">Ver site ↗</a><a href="https://github.com/adrianoaguiarpt/studio-james-tattoo" target="_blank" rel="noopener noreferrer">Código ↗</a></em></figcaption>
+                    </figure>
+                    <figure class="carousel__slide">
+                        <img src="img/projetos/james-telemovel.webp" alt="Studio James Tattoo — Versão telemóvel" width="1280" height="800" loading="lazy" decoding="async">
+                        <figcaption><strong>Studio James Tattoo · Versão telemóvel</strong><span>Layout responsivo com menu móvel</span><em><a href="https://adrianoaguiarpt.github.io/studio-james-tattoo/" target="_blank" rel="noopener noreferrer">Ver site ↗</a><a href="https://github.com/adrianoaguiarpt/studio-james-tattoo" target="_blank" rel="noopener noreferrer">Código ↗</a></em></figcaption>
+                    </figure>
+                    </div>
+                </div>
+                <button class="carousel__btn carousel__btn--prev" type="button" aria-label="Slide anterior">‹</button>
+                <button class="carousel__btn carousel__btn--next" type="button" aria-label="Slide seguinte">›</button>
+            </div>
+            <div class="carousel__dots" role="group" aria-label="Escolher slide"></div>
+        </div><div class="projects-grid"><article class="project-card project-featured"><div class="project-top"><span class="project-index">01</span><span class="project-status">EM PRODUÇÃO</span></div><h3>Portfólio Pessoal</h3><p>Website responsivo desenvolvido para apresentar a minha evolução técnica, organizar projetos e criar uma presença profissional clara. A interface prioriza hierarquia visual, desempenho e navegação intuitiva.</p><div class="badges"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div><div class="project-links"><a href="https://github.com/adrianoaguiarpt" target="_blank" rel="noopener noreferrer">Código no GitHub <b>↗</b></a><a href="#inicio">Demonstração Online <b>↗</b></a></div></article><article class="project-card"><div class="project-top"><span class="project-index">02</span><span class="project-status muted">EM DESENVOLVIMENTO</span></div><h3>Aplicação Full Stack</h3><p>Estrutura preparada para uma solução completa com autenticação, API REST, persistência de dados e uma interface React focada numa experiência de utilização eficiente.</p><div class="badges"><span>React</span><span>Node.js</span><span>PostgreSQL</span><span>Prisma</span></div><div class="project-links"><a class="link-disabled" href="#projetos">Código no GitHub <b>↗</b></a><a class="link-disabled" href="#projetos">Demonstração Online <b>↗</b></a></div></article><article class="project-card"><div class="project-top"><span class="project-index">03</span><span class="project-status muted">PRÓXIMO PROJETO</span></div><h3>Dashboard de Dados</h3><p>Espaço reservado para uma aplicação orientada a dados, com visualização de métricas, integração com APIs e uma arquitetura modular pronta para crescer.</p><div class="badges"><span>TypeScript</span><span>APIs RESTful</span><span>Docker</span></div><div class="project-links"><a class="link-disabled" href="#projetos">Código no GitHub <b>↗</b></a><a class="link-disabled" href="#projetos">Demonstração Online <b>↗</b></a></div></article></div></section>
         <section class="section section-surface" id="formacao"><div class="container formation-layout"><div class="section-heading"><p class="eyebrow">04 · FORMAÇÃO</p><h2>Aprendizagem<br>contínua.</h2><p class="formation-summary">Da fundamentação académica à especialização prática — construo conhecimento de forma consistente, entre a universidade, formações internacionais e projetos reais.</p></div><div class="credentials"><article class="credential-card credential-featured"><div class="credential-top"><span class="credential-org">Universidade Aberta</span><span class="credential-status">A cursar</span></div><h3>Licenciatura em Engenharia Informática</h3><p>Formação académica em ciência da computação, engenharia de software, algoritmos e sistemas — a base teórica que sustenta a prática.</p></article><article class="credential-card"><div class="credential-top"><span class="credential-org">Udemy</span><span class="credential-status muted">Em progresso</span></div><h3>Formação Full Stack Developer</h3><p>Percurso completo de frontend, backend, bases de dados, APIs REST e DevOps, com aplicação direta em projetos.</p></article><article class="credential-card"><div class="credential-top"><span class="credential-org">HarvardX · edX</span><span class="credential-status muted">Em progresso</span></div><h3>CS50: Introduction to Computer Science</h3><p>Fundamentos de computação, estruturas de dados, algoritmos e resolução de problemas com C, Python e SQL.</p></article><article class="credential-card"><div class="credential-top"><span class="credential-org">Microsoft Learn</span><span class="credential-status muted">Em progresso</span></div><h3>Cloud &amp; Azure Fundamentals</h3><p>Conceitos de cloud computing, serviços Azure, segurança e boas práticas de infraestrutura moderna.</p></article><article class="credential-card credential-wide"><div class="credential-top"><span class="credential-org">Formação complementar</span><span class="credential-status muted">Contínua</span></div><h3>Especialização técnica</h3><p>React, TypeScript, Node.js, arquitetura de APIs, testes automatizados, Git e ambiente Docker — cursos e documentação para aprofundar cada tecnologia do stack.</p></article></div></div></section>
         <section class="contact-section container" id="contato"><div><p class="eyebrow">05 · CONTACTO</p><h2>Vamos construir<br>algo relevante.</h2><p>Estou disponível para conversar sobre oportunidades, colaboração e projetos que exijam atenção ao detalhe.</p></div><div class="contact-cards"><a href="mailto:adrianoaguiarpt@gmail.com"><span>EMAIL</span><strong>adrianoaguiarpt@gmail.com</strong><small>A forma mais direta de falar sobre oportunidades, colaboração ou um projeto concreto.</small><b aria-hidden="true">↗</b></a><a href="https://www.linkedin.com/in/adrianoaguiarpt/" target="_blank" rel="noopener noreferrer"><span>LINKEDIN</span><strong>/in/adrianoaguiarpt</strong><small>Percurso profissional, formação e contacto para recrutamento.</small><b aria-hidden="true">↗</b></a><a href="https://github.com/adrianoaguiarpt" target="_blank" rel="noopener noreferrer"><span>GITHUB</span><strong>github.com/adrianoaguiarpt</strong><small>Código dos projetos e evolução técnica ao longo do tempo.</small><b aria-hidden="true">↗</b></a></div></section>
     </main>
