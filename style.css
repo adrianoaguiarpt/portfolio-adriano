@@ -165,7 +165,7 @@ h3 { font-family: var(--sans); font-weight: 600; letter-spacing: -.01em; line-he
 .menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
 
 /* ---------- Hero ---------- */
-.hero { position: relative; overflow: hidden; }
+.hero { position: relative; overflow: hidden; isolation: isolate; }
 
 .hero__grid {
     display: grid; grid-template-columns: 1.2fr .8fr; align-items: center; gap: 72px;
@@ -485,22 +485,129 @@ body.modal-open { overflow: hidden; }
 .credential--featured .credential__top em { color: var(--accent-ink); }
 
 /* ---------- Contacto ---------- */
-#contato { padding: 140px 0; }
-.cta { display: grid; grid-template-columns: 1.1fr .9fr; gap: 96px; align-items: end; }
-.cta h2 { font-size: clamp(2.6rem, 5.4vw, 4.6rem); }
-.cta__text > p:not(.eyebrow) { margin-top: 24px; max-width: 30rem; color: var(--muted); font-size: 1.05rem; }
-.cta .hero__actions { margin-top: 40px; }
-.cta__links { display: grid; border-top: 1px solid var(--rule-strong); }
-.cta__links a {
-    position: relative; display: block; padding: 24px 44px 24px 0;
-    border-bottom: 1px solid var(--rule);
-    transition: padding .35s var(--ease);
+#contato { position: relative; overflow: hidden; padding: 140px 0; isolation: isolate; }
+
+/* Grelha dourada que só aparece à volta do rato (topo e contacto) */
+.grade-rato {
+    --mx: -1000px; --my: -1000px;
+    position: absolute; inset: 0; z-index: -1; pointer-events: none;
+    background-image:
+        linear-gradient(to right, rgba(180, 154, 101, .16) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(180, 154, 101, .16) 1px, transparent 1px);
+    background-size: 48px 48px;
+    -webkit-mask-image: radial-gradient(320px circle at var(--mx) var(--my), #000 0%, transparent 100%);
+            mask-image: radial-gradient(320px circle at var(--mx) var(--my), #000 0%, transparent 100%);
 }
-.cta__links a:hover { padding-left: 12px; }
-.cta__links span { display: block; color: var(--muted); font-size: .7rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; }
-.cta__links strong { display: block; margin-top: 4px; font-family: var(--serif); font-weight: 400; font-size: 1.45rem; word-break: break-word; }
-.cta__links b { position: absolute; right: 4px; top: 50%; transform: translateY(-50%); color: var(--gold); font-weight: 400; transition: transform .3s var(--ease); }
-.cta__links a:hover b { transform: translate(4px, -50%); }
+.contact__glow {
+    position: absolute; z-index: -1; top: -12rem; left: -12rem; width: 30rem; height: 30rem;
+    border-radius: 50%; background: #24493E; opacity: .45; filter: blur(120px); pointer-events: none;
+}
+
+.contact__head {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;
+    padding-bottom: 24px; margin-bottom: 64px; border-bottom: 1px solid var(--rule);
+}
+.contact__head .eyebrow { margin: 0; }
+
+.status {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 7px 16px; border: 1px solid var(--rule-strong); border-radius: 999px;
+    background: rgba(18, 43, 37, .7); color: var(--fg); font-size: .76rem; font-weight: 500;
+}
+.status__dot { position: relative; width: 8px; height: 8px; border-radius: 50%; background: var(--gold); }
+.status__dot::after {
+    content: ""; position: absolute; inset: 0; border-radius: 50%; background: var(--gold);
+    animation: ping 1.8s cubic-bezier(0, 0, .2, 1) infinite;
+}
+@keyframes ping { 75%, 100% { transform: scale(2.4); opacity: 0; } }
+.status__sep { color: var(--muted); opacity: .6; }
+.status__clock { display: inline-flex; align-items: center; gap: 6px; color: var(--gold); font-variant-numeric: tabular-nums; }
+
+.contact__grid { display: grid; grid-template-columns: 7fr 5fr; gap: 80px; align-items: center; }
+
+.contact__intro { display: flex; align-items: center; gap: 28px; }
+.contact__intro h2 { font-size: clamp(2.6rem, 5vw, 4.4rem); line-height: 1.02; }
+.contact__intro h2 em { display: block; font-style: italic; color: var(--gold); }
+
+.contact__photo { position: relative; flex-shrink: 0; width: 104px; height: 104px; margin: 0; padding: 4px; border: 1px solid rgba(180, 154, 101, .45); background: var(--forest-deep); }
+.contact__photo img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(.35) contrast(1.05); transition: filter .5s var(--ease), transform .5s var(--ease); }
+.contact__photo:hover img { filter: none; }
+.contact__photo figcaption {
+    position: absolute; right: -10px; bottom: -10px; padding: 2px 8px;
+    border: 1px solid rgba(180, 154, 101, .45); background: var(--forest);
+    color: var(--gold); font-size: .62rem; font-weight: 700; letter-spacing: .14em;
+}
+
+.contact__lead { margin-top: 32px; max-width: 34rem; color: var(--muted); font-size: 1.05rem; line-height: 1.7; }
+
+.contact__picker { margin-top: 40px; }
+.contact__picker-label {
+    display: flex; align-items: center; gap: 8px; margin-bottom: 14px;
+    color: var(--gold); font-size: .7rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase;
+}
+.pills { display: flex; flex-wrap: wrap; gap: 10px; }
+.pill {
+    padding: 10px 16px; border: 1px solid var(--rule-strong); border-radius: var(--r);
+    background: transparent; color: var(--muted); font: 500 .86rem var(--sans); cursor: pointer;
+    transition: color .25s, border-color .25s, background .25s;
+}
+.pill:hover { color: var(--fg); border-color: rgba(241, 235, 221, .5); }
+.pill[aria-pressed="true"] { color: var(--fg); border-color: var(--gold); background: rgba(180, 154, 101, .14); }
+.pill:focus-visible, .copy:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+.contact__actions { margin-top: 36px; }
+.contact__actions .btn { gap: 12px; }
+
+/* Lista de contactos */
+.contact__links { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule-strong); border-bottom: 1px solid var(--rule-strong); }
+.contact__links li { position: relative; border-bottom: 1px solid var(--rule); transition: opacity .3s; }
+.contact__links li:last-child { border-bottom: 0; }
+.contact__links:hover li:not(:hover) { opacity: .45; }
+.contact__links li::before {
+    content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity .3s;
+    background: linear-gradient(90deg, rgba(180, 154, 101, .1), transparent);
+}
+.contact__links li:hover::before { opacity: 1; }
+.contact__links a { position: relative; display: block; padding: 28px 60px 28px 8px; }
+.contact__label { display: block; color: var(--muted); font-size: .7rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; transition: color .3s; }
+.contact__links li:hover .contact__label { color: var(--gold); }
+.contact__links strong { display: block; margin-top: 6px; font-family: var(--serif); font-weight: 400; font-size: 1.4rem; word-break: break-word; transition: transform .35s var(--ease); }
+.contact__links li:hover strong { transform: translateX(6px); }
+
+.contact__arrow {
+    position: absolute; right: 8px; top: 50%; transform: translateY(-50%);
+    display: grid; place-items: center; width: 38px; height: 38px; overflow: hidden;
+    border: 1px solid transparent; border-radius: 50%; color: var(--gold); font-style: normal;
+    transition: border-color .3s, background .3s;
+}
+.contact__arrow b { grid-area: 1 / 1; font-weight: 400; transition: transform .35s var(--ease); }
+.contact__arrow b + b { transform: translate(-22px, 22px); }
+.contact__links li:hover .contact__arrow { border-color: rgba(180, 154, 101, .35); background: rgba(180, 154, 101, .1); }
+.contact__links li:hover .contact__arrow b:first-child { transform: translate(22px, -22px); }
+.contact__links li:hover .contact__arrow b + b { transform: none; }
+
+/* E-mail: o botão de copiar fica ao lado da seta */
+.contact__links li:first-child a { padding-right: 160px; }
+.copy {
+    position: absolute; right: 56px; top: 50%; transform: translateY(-50%); z-index: 1;
+    display: inline-flex; align-items: center; gap: 6px; padding: 7px 11px;
+    border: 1px solid var(--rule-strong); border-radius: var(--r); background: var(--forest-deep);
+    color: var(--fg); font: 600 .72rem var(--sans); letter-spacing: .06em; cursor: pointer;
+    transition: color .25s, border-color .25s;
+}
+.copy:hover { color: var(--gold); border-color: var(--gold); }
+.copy.is-copied { color: var(--gold); border-color: var(--gold); }
+
+.contact__meta {
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px;
+    margin-top: 22px; padding: 0 8px; color: var(--muted); font-size: .76rem; letter-spacing: .04em;
+}
+.contact__meta span { display: inline-flex; align-items: center; gap: 6px; }
+
+/* Ícones inline */
+.ico { width: 16px; height: 16px; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.ico--xs { width: 14px; height: 14px; }
+.ico--gold { color: var(--gold); }
 
 /* ---------- Footer ---------- */
 .site-footer { border-top: 1px solid var(--rule); background: var(--forest-deep); color: var(--cream); }
@@ -541,7 +648,7 @@ body.modal-open { overflow: hidden; }
     .about, .about__extra { grid-template-columns: 1fr; gap: 64px; }
     .about__photo { position: static; max-width: 460px; }
     .about__extra { margin-top: 80px; }
-    .cta { grid-template-columns: 1fr; gap: 56px; align-items: start; }
+    .contact__grid { grid-template-columns: 1fr; gap: 64px; }
     .credential { grid-template-columns: 1fr auto; gap: 8px 24px; }
     .credential__top span { grid-column: 1; grid-row: 1; }
     .credential__top em { grid-column: 2; grid-row: 1; }
@@ -592,5 +699,12 @@ body.modal-open { overflow: hidden; }
     .thumbs button { width: 66px; }
     .footer { grid-template-columns: 1fr; gap: 36px; padding: 56px 0 40px; }
     .btn { flex: 1 1 auto; }
+    .contact__head { margin-bottom: 44px; }
+    .contact__intro { flex-direction: column; align-items: flex-start; gap: 24px; }
+    .contact__photo { width: 88px; height: 88px; }
+    .contact__links strong { font-size: 1.15rem; }
+    .contact__links li:first-child a { padding-right: 60px; padding-bottom: 64px; }
+    .copy { top: auto; bottom: 20px; right: auto; left: 8px; transform: none; }
+    .grade-rato, .contact__glow { display: none; }
     .more .btn { width: 100%; }
 }
