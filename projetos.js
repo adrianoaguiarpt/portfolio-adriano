@@ -74,7 +74,7 @@ window.PROJETOS = [
       { src: 'img/projetos/tech-atacado-catalogo.webp', legenda: 'Catálogo' }
     ],
     site: 'https://loja-acessorios.vercel.app',
-    codigo: 'https://github.com/adrianoaguiarpt/homework'
+    codigo: 'https://github.com/adrianoaguiarpt/loja-acessorios'
   },
   {
     nome: 'SantosNovaArts',

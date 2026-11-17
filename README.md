@@ -4,7 +4,7 @@ Website pessoal / cartão de visitas de **Adriano Aguiar**, Desenvolvedor Full S
 
 Página única, responsiva e sem dependências de build — HTML, CSS e um pequeno ficheiro JavaScript (menu móvel e carrossel de projetos).
 
-**Online:** https://adrianoaguiarpt.github.io/portifolio-adriano/
+**Online:** https://adrianoaguiardev.com/
 
 ## Estrutura
 
@@ -34,7 +34,7 @@ Início · Sobre · Tecnologias · Projetos · Formação · Contacto
 | Projeto | Tecnologias | Links |
 |---------|-------------|-------|
 | James Tattoo Art — site para estúdio de tatuagem (cliente) | HTML, CSS, JavaScript | [site](https://adrianoaguiarpt.github.io/studio-james-tattoo/) · [código](https://github.com/adrianoaguiarpt/studio-james-tattoo) |
-| Tech Atacado — catálogo B2B full stack | Next.js, TypeScript, Tailwind, Supabase | [site](https://loja-acessorios.vercel.app) · [código](https://github.com/adrianoaguiarpt/homework) |
+| Tech Atacado — catálogo B2B full stack | Next.js, TypeScript, Tailwind, Supabase | [site](https://loja-acessorios.vercel.app) · [código](https://github.com/adrianoaguiarpt/loja-acessorios) |
 | SantosNovaArts — site para empresa de estofados (cliente) | HTML, CSS, JavaScript | [site](https://adrianoaguiarpt.github.io/santos_site/) · [código](https://github.com/adrianoaguiarpt/santos_site) |
 
 Para adicionar um projeto ao carrossel: guardar a captura em `img/projetos/` e copiar um bloco `<figure>` no `index.html`.
