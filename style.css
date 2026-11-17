@@ -198,14 +198,6 @@ h3 { font-family: var(--sans); font-weight: 600; letter-spacing: -.01em; line-he
 .hero__text { max-width: 33rem; margin-top: 28px; color: var(--muted); font-size: 1.05rem; }
 .hero__actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 40px; }
 
-.hero__stats {
-    display: grid; grid-template-columns: repeat(3, auto); justify-content: start; gap: 0;
-    margin-top: 64px; border-top: 1px solid var(--rule);
-}
-.hero__stats div { padding: 22px 40px 0 0; margin-right: 40px; border-right: 1px solid var(--rule); }
-.hero__stats div:last-child { border-right: 0; margin-right: 0; }
-.hero__stats dt { font-family: var(--serif); font-size: 2rem; line-height: 1; color: var(--cream); }
-.hero__stats dd { margin-top: 8px; color: var(--muted); font-size: .76rem; letter-spacing: .08em; text-transform: uppercase; }
 
 .hero__media { position: relative; animation: fadeIn 1.2s var(--ease) .2s both; }
 .hero__frame {
@@ -230,14 +222,25 @@ h3 { font-family: var(--sans); font-weight: 600; letter-spacing: -.01em; line-he
         linear-gradient(180deg, rgba(18, 43, 37, .18), rgba(18, 43, 37, 0) 30%);
 }
 
-.clients {
-    display: flex; align-items: center; gap: 40px; flex-wrap: wrap;
-    padding: 28px 0 34px; border-top: 1px solid var(--rule);
-}
-.clients p { color: var(--muted); font-size: .72rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; }
-.clients ul { display: flex; flex-wrap: wrap; gap: 10px 0; }
-.clients li { font-family: var(--serif); font-size: 1.2rem; color: var(--cream); opacity: .85; }
-.clients li + li::before { content: "/"; margin: 0 18px; color: var(--gold); opacity: .7; }
+
+/* ---------- Faixas corridas (tecnologias e serviços) ---------- */
+.faixas { position: relative; background: var(--forest-deep); }
+.faixa { overflow: hidden; border-top: 1px solid rgba(241, 235, 221, .12); }
+.faixa__track { display: flex; width: max-content; animation: desliza 45s linear infinite; }
+.faixa--servicos .faixa__track { animation-duration: 55s; animation-direction: reverse; }
+.faixa:hover .faixa__track { animation-play-state: paused; }
+.faixa__list { display: flex; flex-shrink: 0; }
+.faixa__list li { display: flex; align-items: center; white-space: nowrap; }
+.faixa__list li::after { content: ""; width: 5px; height: 5px; margin: 0 34px; border-radius: 50%; background: var(--gold); opacity: .8; }
+
+.faixa--stack { padding: 18px 0; }
+.faixa--stack li { color: var(--neutral); font-size: .78rem; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; }
+
+.faixa--servicos { padding: 26px 0; background: var(--forest); border-bottom: 1px solid rgba(241, 235, 221, .12); }
+.faixa--servicos li { font-family: var(--serif); font-style: italic; font-size: clamp(1.3rem, 2.2vw, 1.75rem); color: var(--cream); }
+.faixa--servicos li::after { width: 6px; height: 6px; margin: 0 40px; }
+
+@keyframes desliza { to { transform: translateX(-50%); } }
 
 /* ---------- Secções ---------- */
 .section { padding: 140px 0; }
@@ -522,6 +525,9 @@ body.modal-open { overflow: hidden; }
     html { scroll-behavior: auto; }
     *, *::before, *::after { animation: none !important; transition: none !important; }
     .reveal { opacity: 1; transform: none; }
+    .faixa__track { width: auto; flex-wrap: wrap; justify-content: center; padding: 0 20px; }
+    .faixa__list { flex-wrap: wrap; justify-content: center; row-gap: 10px; }
+    .faixa__list[aria-hidden="true"] { display: none; }
 }
 
 /* ---------- Responsivo ---------- */
@@ -563,7 +569,6 @@ body.modal-open { overflow: hidden; }
     .hero__role { margin-top: 36px; }
     .hero__media { order: -1; max-width: 360px; width: calc(100% - 18px); }
     .hero__frame { margin-left: 0; }
-    .clients li { font-size: 1.05rem; }
 }
 
 @media (max-width: 640px) {
@@ -571,12 +576,7 @@ body.modal-open { overflow: hidden; }
     .section, #contato { padding: 96px 0; }
     .section-head { margin-bottom: 48px; }
     .brand { letter-spacing: .24em; font-size: .76rem; }
-    .hero__stats { grid-template-columns: repeat(3, 1fr); }
-    .hero__stats div { padding-right: 12px; margin-right: 12px; }
-    .hero__stats dt { font-size: 1.5rem; }
-    .hero__stats dd { font-size: .64rem; letter-spacing: .04em; }
-    .clients { gap: 14px; }
-    .clients li + li::before { margin: 0 10px; }
+    
     .slider { --gutter: 20px; }
     .slider__track { gap: 20px; }
     .work-card { flex-basis: 84vw; }
