@@ -1,0 +1,3 @@
+Manrope e DM Serif Display são distribuídas sob a SIL Open Font License 1.1.
+Licença: https://openfontlicense.org/open-font-license-official-text/
+Origem dos ficheiros: Google Fonts (subconjunto latino, WOFF2).

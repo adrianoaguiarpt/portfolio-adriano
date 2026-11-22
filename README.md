@@ -1,8 +1,8 @@
 # Adriano Aguiar — Portfólio
 
-Website pessoal / cartão de visitas de **Adriano Aguiar**, Desenvolvedor Full Stack (Porto, Portugal).
+Website pessoal / cartão de visitas de **Adriano Aguiar**, Desenvolvedor Full Stack (Maia, Porto, Portugal).
 
-Página única, responsiva e sem dependências de build — HTML, CSS e um pequeno ficheiro JavaScript (menu móvel e carrossel de projetos).
+Página única, responsiva e sem dependências de build — HTML, CSS e um pequeno ficheiro JavaScript (menu, contacto e efeitos).
 
 **Online:** https://adrianoaguiardev.com/
 
@@ -12,10 +12,12 @@ Página única, responsiva e sem dependências de build — HTML, CSS e um peque
 |----------|--------|
 | `index.html` | Conteúdo e estrutura da página |
 | `style.css` | Estilo (verde floresta, creme e dourado; layout editorial responsivo) |
-| `script.js` | Menu em ecrãs pequenos, carrossel de projetos e janela de detalhes |
-| `projetos.js` | Lista dos projetos do carrossel — para juntar um trabalho, copiar um bloco |
+| `script.js` | Menu em ecrãs pequenos, secção de contacto e grelha dourada |
+| `privacidade.html` | Política de Privacidade e Cookies |
+| `robots.txt`, `sitemap.xml` | Ficheiros para os motores de busca |
+| `og-image.png` | Imagem de partilha nas redes (1200×630) |
+| `fonts/` | Manrope e DM Serif Display alojadas no site |
 | `img/` | Foto de perfil e favicons |
-| `img/projetos/` | Capturas dos projetos para o carrossel (1280×800, WebP) |
 
 ## Desenvolvimento
 
@@ -27,17 +29,7 @@ python3 -m http.server
 
 ## Secções
 
-Início · Sobre · Tecnologias · Projetos · Formação · Contacto
-
-## Projetos em destaque
-
-| Projeto | Tecnologias | Links |
-|---------|-------------|-------|
-| James Tattoo Art — site para estúdio de tatuagem (cliente) | HTML, CSS, JavaScript | [site](https://adrianoaguiarpt.github.io/studio-james-tattoo/) · [código](https://github.com/adrianoaguiarpt/studio-james-tattoo) |
-| Tech Atacado — catálogo B2B full stack | Next.js, TypeScript, Tailwind, Supabase | [site](https://loja-acessorios.vercel.app) · [código](https://github.com/adrianoaguiarpt/loja-acessorios) |
-| SantosNovaArts — site para empresa de estofados (cliente) | HTML, CSS, JavaScript | [site](https://adrianoaguiarpt.github.io/santos_site/) · [código](https://github.com/adrianoaguiarpt/santos_site) |
-
-Para adicionar um projeto ao carrossel: guardar a captura em `img/projetos/` e copiar um bloco `<figure>` no `index.html`.
+Início · Serviços · Processo · Sobre · Formação · Contacto
 
 ## Contacto
 
